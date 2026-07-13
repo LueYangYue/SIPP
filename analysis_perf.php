@@ -44,16 +44,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id'])) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Analysis</title>
-  <link rel="icon" type="image/x-icon" href="/images/university.png">
-  <link rel="stylesheet" href="/src/styles.css">
+  <link rel="icon" type="image/x-icon" href="images/university.png">
+  <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="/src/visualize_perf.js"></script>
-  <script src="/src/intervene_perf.js"></script>
+  <script src="visualize_perf.js"></script>
+  <script src="intervene_perf.js"></script>
   <style>
     body {
       letter-spacing: 0.05rem;
@@ -147,11 +147,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id'])) {
 </head>
 <body>
   <nav class="navbar">
-    <a class="navbar-logo" href="/src/landing.html">
-      <img src="/images/university.png" alt="University Logo" style="width: 32px;height: 32px;">
+    <a class="navbar-logo" href="landing.html">
+      <img src="images/university.png" alt="University Logo" style="width: 32px;height: 32px;">
     </a><h1>Analitik</h1>
   <nav class="navbar-menu">
-    <button onclick="document.location='/src/logout.php'" style="width: 95px; height: 32px; font-size: small">Log Keluar</button>
+    <button onclick="document.location='logout.php'" style="width: 95px; height: 32px; font-size: small">Log Keluar</button>
   </nav>
   </nav><br />
   <div class="container"><b>Status prestasi pelajar: <?php echo $student['status'];?></b> 

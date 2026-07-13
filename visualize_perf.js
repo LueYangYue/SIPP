@@ -1,6 +1,6 @@
 function filterYear(year) {
     const tPerf = this.document.querySelector("div#table-container");
-    fetch("/src/filter_perf.php?year=" + year)
+    fetch("filter_perf.php?year=" + year)
         .then(response => response.text())
         .then(text => tPerf.innerHTML = text);
 }
@@ -58,9 +58,9 @@ function analyzePerf(button) {
     const xhttp = new XMLHttpRequest();
     const id = button.parentNode.parentNode.children[0].textContent; 
     const name = button.parentNode.parentNode.children[1].textContent;
-    xhttp.open("GET", "/src/analysis_perf.php?id=" + id + "&name=" + name, true);
+    xhttp.open("GET", "analysis_perf.php?id=" + id + "&name=" + name, true);
     xhttp.send();
-    document.location="/src/analysis_perf.php?id=" + id + "&name=" + name;
+    document.location="analysis_perf.php?id=" + id + "&name=" + name;
 }
 //Please use session and semester
 //Assume short semester is not counted, functions below are not used

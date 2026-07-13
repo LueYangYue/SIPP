@@ -32,11 +32,11 @@ function categorize ($suggestion){
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Papan Pemuka</title>
-  <link rel="icon" type="image/x-icon" href="/t_4086/images/university.png">
+  <link rel="icon" type="image/x-icon" href="images/university.png">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <script src="/t_4086/src/visualize_perf.js"></script>
-  <script src="/t_4086/src/intervene_perf.js"></script>
+  <script src="visualize_perf.js"></script>
+  <script src="intervene_perf.js"></script>
   <style>
     :root {
       --blue-one: #0044ba;
@@ -68,8 +68,8 @@ function categorize ($suggestion){
   </style>
 </head>
 <body>
-  <a class="home-logo" href="/t_4086/src/landing.html">
-    <img src="/t_4086/images/university.png" alt="University Logo" style="width: 32px;height: 32px;">
+  <a class="home-logo" href="landing.html">
+    <img src="images/university.png" alt="University Logo" style="width: 32px;height: 32px;">
   </a>
   <aside class="sidebar">
     <div class="aside-links">

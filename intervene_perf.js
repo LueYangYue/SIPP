@@ -3,7 +3,7 @@ function markRisk(studID) {
     const container = document.getElementsByClassName("intervention-container");
     chart.addEventListener("click", function() {
         const session = prompt("Sila masukkan SESI prestasi berdasarkan label untuk menandakan risiko (Cth: 2/20252026)");
-        fetch("/src/warning_risk.php?stud_id=" + studID + "&session=" + session)
+        fetch("warning_risk.php?stud_id=" + studID + "&session=" + session)
         .then(response=>response.text())
         .then(text => {
             if (text == "") {
@@ -25,7 +25,7 @@ function planIntervention(studID) {
     chart.addEventListener("click", function() {
         let message = "";
         let session = prompt("Sila masukkan SESI prestasi berdasarkan label untuk menandakan risiko (Cth: 2/20252026)");
-        fetch("/src/warning_risk.php?stud_id=" + studID + "&session=" + session)
+        fetch("warning_risk.php?stud_id=" + studID + "&session=" + session)
         .then(response=>response.text())
         .then(text => {
             if (text == "") {
@@ -43,7 +43,7 @@ function planIntervention(studID) {
                     session = prompt("Sila masukkan SESI prestasi berdasarkan label untuk merancang intervensi (Cth: 2/20252026)");
                 }
                 if (session.trim().match(/^\d+\/\d{4}\d{4}$/)) {
-                    fetch("/src/plan_intervention.php?stud_id=" + studID + "&session=" + session + "&plan_filled=false")
+                    fetch("plan_intervention.php?stud_id=" + studID + "&session=" + session + "&plan_filled=false")
                     .then(response => response.text())
                     .then(form => {
                         container.innerHTML = form;
@@ -56,7 +56,7 @@ function planIntervention(studID) {
 
 function notifyRisk(id) {
     const list = document.querySelector(".notifications-list");
-    fetch("/src/warning_risk.php?id=" + id)
+    fetch("warning_risk.php?id=" + id)
     .then(response => response.text())
     .then(text => {
         list.innerHTML = text;
@@ -65,7 +65,7 @@ function notifyRisk(id) {
 
 function markRead(button, no, id) {
     const list = document.querySelector(".notifications-list");
-    fetch("/src/warning_risk.php?no=" + no + "&id=" + id)
+    fetch("warning_risk.php?no=" + no + "&id=" + id)
     .then(response=>response.text())
     .then(text => {
         list.innerHTML = text;
