@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIPP</title>
+  <link rel="icon" type="image/x-icon" href="/images/university.png">
+  <link rel="stylesheet" href="/src/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --orange: #ffa500;
+    }
+    
+    body {
+      font-family: serif, monospace;
+      line-height: 0.5;
+    }
+    .container {
+      padding: 0 2rem;
+    }
+    img {
+      background-color: #fff;
+    }
+
+    /* --- HERO HEADER --- */
+    .hero-header {
+      position: relative;
+      width: 100vw;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      background-image: linear-gradient(rgba(220, 220, 220, 0.7), rgba(220, 220, 220, 0.7)), 
+      url('/images/img_hero.png');
+      background-size: cover;
+      background-position: center;
+    }
+    .hero-content {
+      font-family: sans-serif;
+      z-index: 10;
+    }
+    .hero-title {
+      font-size: 5rem;
+      font-weight: 800;
+      letter-spacing: 1rem;
+      margin-bottom: 0.5rem;
+      color: #000;
+      padding: 2rem;
+    }
+    .hero-subtitle {
+      font-size: 1.25rem;
+      font-weight: 500;
+      letter-spacing: 0.05rem;
+      margin-bottom: 2rem;
+    }
+
+    /* --- FEATURES IMAGES --- */
+    .features-images {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      background-color: #fff;
+      gap: 1rem;  
+      width: 100vw;
+      padding: 2rem;
+    }
+    .feature-container {
+      position: relative;
+    }
+    .feature-image {
+      height: 50vh;
+      width: 40vw;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 3px 10px rgba(0, 0, 0, 0.19);
+    }
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
+      transition: opacity 0.3s ease;
+    }
+    .overlay:hover {
+      opacity: 1;
+    }
+    .overlay a {
+      color: #fff;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: sans-serif;
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: 0.25rem;
+      text-decoration: none;
+    }
+
+    /* --- FEATURES ARTICLES --- */
+    .features-articles {
+      background-color: #fff;
+      padding: 2rem;
+    }
+    .articles-header {
+      margin-bottom: 2rem;
+    }
+    .articles-header h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    .articles-header p {
+      font-family: monospace;
+      font-size: 1rem;
+      color: var(--secondary-text);
+    }
+    .articles-grid {
+      display: grid;
+      grid-template-columns: auto auto;
+      justify-items: space-evenly;
+      line-height: 1.5;
+      gap: 2rem 3rem; 
+    }
+    .feature-article {
+      border-radius: 10px;
+    }
+    .feature-article:hover {
+      background-color: var(--gray-hover);
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <a class="header-logo" href="landing.html">
+      <img src="/images/university.png" alt="University Logo" style="width: 32px;height: 32px;">
+    </a>
+    <nav class="navbar-menu">
+      <a href="/src/contact_faq.php" target="_blank">FAQ</a>
+      <a href="mailto:a202211@siswa.ukm.edu.my">Hubungi Kami</a>
+      <button onclick="document.location='login.html'">Log Masuk</button>
+    </nav>
+  </header>
+  <section class="hero-header">
+    <div class="hero-content">
+      <h1 class="hero-title">SIPP</h1>
+      <p class="hero-subtitle">Sistem Intervensi Prestasi Pelajar</p>
+    </div>
+  </section>
+  <section class="features-images">
+    <div class="feature-container">
+      <img class="feature-image" src="/images/img_student.png" alt="Feature 1">
+      <div class="overlay"><a href="login.html">Pelajar</a></div>
+    </div>
+    <div class="feature-container">
+      <img class="feature-image" src="/images/img_teacher.png" alt="Feature 2">
+      <div class="overlay"><a href="login.html">Pendidik</a></div>
+    </div>
+  </section>
+  <section class="features-articles">
+    <div class="container articles-header">
+      <h2>Fitur</h2>
+      <p>Bagaimanakah SIPP boleh membantu anda?</p>
+    </div>
+    <div class="articles-grid">
+      <article class="container feature-article">
+        <a href="/src/trial_register.php">
+          <h3>
+            <span class="feature-icon">
+              <i class="fa-regular fa-file-lines"></i>
+            </span>Markah
+          </h3>
+          <p>Melihat senarai markah akademik</p>
+        </a>
+      </article>
+      <article class="container feature-article">
+        <a href="/src/trial_register.php">
+          <h3>
+            <span class="feature-icon">
+              <i class ="fas fa-award"></i>
+            </span>Analitik
+          </h3>
+          <p>Melihat analisis markah akademik</p>
+        </a>
+      </article>
+      <article class="container feature-article">
+        <a href="/src/trial_intervention.php">
+          <h3>
+            <span class="feature-icon">
+              <i class="fas fa-user-graduate"></i>
+            </span>Peringatan
+          </h3>
+          <p>Memberikan amaran awal kepada pelajar berisiko yang dikesan</p>
+        </a>
+      </article>
+      <article class="container feature-article">
+        <a href="/src/trial_intervention.php">
+          <h3>
+            <span class="feature-icon">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </span>Panduan
+          </h3>
+          <p>Menyampaikan cadangan kepada pelajar yang memerlukan panduan</p>
+        </a>
+      </article>
+    </div>
+  </section>
+  <footer class="more-footer">
+    <div class="container footer-content">
+      <a class="footer-logo" href="landing.html">
+        <img src="/images/university.png" alt="University Logo" style="width: 24px;height: 24px;">
+      </a>
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+        <a href="http://www.youtube.com/@UKMYangYue"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.linkedin.com/"><i class="fab fa-linkedin"></i></a>
+      </div>  
+    </div>
+  </footer>
+</body>
+</html>
