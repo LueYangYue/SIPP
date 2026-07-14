@@ -2,12 +2,13 @@
 <html>
   <head>
     <script>//document.location='/SIPP/src/landing.html'
-      fetch('https://raw.githubusercontent.com/0x4D31/SIPP/main/src/landing.html')
+      fetch('https://lueyangyue.github.io/SIPP/src/landing.html')
         .then(response => response.text())
         .then(data => {
-          document.open();
+          document.innerHTML = data;
+          /*document.open();
           document.write(data);
-          document.close();
+          document.close();*/
         })
         .catch(error => {
           console.error('Error fetching landing.html:', error);
