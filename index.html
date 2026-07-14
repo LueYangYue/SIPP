@@ -1,7 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script>document.location='/SIPP/src/landing.html'</script>
+    <script>//document.location='/SIPP/src/landing.html'
+      fetch('https://raw.githubusercontent.com/0x4D31/SIPP/main/src/landing.html')
+        .then(response => response.text())
+        .then(data => {
+          document.open();
+          document.write(data);
+          document.close();
+        })
+        .catch(error => {
+          console.error('Error fetching landing.html:', error);
+        });
+    </script>
   </head>
   <body></body>
 </html>

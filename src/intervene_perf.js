@@ -12,7 +12,8 @@ function markRisk(studID) {
             } else if (text == "Berisiko"){
                 message = `Prestasi pelajar ${studID} bagi sesi ${session} SUDAH dinilai sebagai berisiko.`;
             } else {
-                message = `Ralat ${text}`;
+                message = `Ralat: Semester prestasi tidak dikenal pasti, gagal menandakan risiko.`;
+                console.log(text);
             }
             alert(message);
         });
@@ -34,7 +35,8 @@ function planIntervention(studID) {
             } else if (text == "Berisiko"){
                 message = `Prestasi pelajar ${studID} bagi sesi ${session} SUDAH dinilai sebagai berisiko.`;
             } else {
-                message = `Ralat ${text}`;
+                message = `Ralat: Semester prestasi tidak dikenal pasti, gagal menandakan risiko.`;
+                console.log(text);
             }
             alert(message);
             const makePlan = prompt("Adakah perancangan intervensi diperlukan? (Ya/Tidak)");
