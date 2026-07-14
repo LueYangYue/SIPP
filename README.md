@@ -5,4 +5,4 @@
 
 ## Welcome to SIPP &#128511;
 Go to 
-<a href="https://lueyangyue.github.io/SIPP/landing.html">landing page >></a>
+<a href="https://lueyangyue.github.io/SIPP/src/landing.html">landing page >></a>
