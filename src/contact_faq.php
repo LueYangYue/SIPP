@@ -4,7 +4,7 @@
   <title>FAQ</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="/images/university.png">
+  <link rel="icon" type="image/x-icon" href="/SIPP/images/university.png">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -64,8 +64,8 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="header-logo" href="/src/landing.html">
-        <img src="/images/university.png" alt="University Logo" style="width: 32px;height: 32px;">
+      <a class="header-logo" href="/SIPP/src/landing.html">
+        <img src="/SIPP/images/university.png" alt="University Logo" style="width: 32px;height: 32px;">
       </a>
     </div>
     <div class="collapse navbar-collapse" id="barNav">
@@ -80,7 +80,7 @@
 
 <div class="container-fluid bg-1 text-center" id="hello">
   <h3>Hi</h3>
-  <img src="/images/3d_school.png" class="img-circle" width="300" height="300"alt="logo">
+  <img src="/SIPP/images/3d_school.png" class="img-circle" width="300" height="300"alt="logo">
   <h3>Kami A202211</h3>
 </div>
 
@@ -89,15 +89,15 @@
   <div class="row">
     <div class="col-sm-4">
       <p>Adakah anda sudah mendaftar akaun siswa sebelum log masuk ke dalam SIPP? Jika tidak, hubungilah pentadbir sekarang!</p>
-      <img src="/images/feature1.png" class="img-responsive" alt="Image" style="display:inline">
+      <img src="/SIPP/images/feature1.png" class="img-responsive" alt="Image" style="display:inline">
     </div>
     <div class="col-sm-4">
       <p>Ada pertanyaan tentang analitik prestasi pelajar? Tanyalah dengan borang di bawah!</p>
-      <img src="/images/feature2.png" class="img-responsive" alt="Image" style="display:inline">
+      <img src="/SIPP/images/feature2.png" class="img-responsive" alt="Image" style="display:inline">
     </div>
     <div class="col-sm-4">
       <p>Hadapi masalah ketika menggunakan fungsi lain SIPP? Mintalah bantuan di sini!</p>
-      <img src="/images/feature3.png" class="img-responsive" alt="Image" style="display:inline">
+      <img src="/SIPP/images/feature3.png" class="img-responsive" alt="Image" style="display:inline">
     </div>
 </div>
 <div class="container-fluid bg-3 text-center" id="where">

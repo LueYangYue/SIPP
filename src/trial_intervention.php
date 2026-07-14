@@ -21,7 +21,7 @@ $png = "1.32";
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Percubaan</title>
-  <link rel="icon" type="image/x-icon" href="/images/university.png">
+  <link rel="icon" type="image/x-icon" href="/SIPP/images/university.png">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -119,7 +119,7 @@ $png = "1.32";
 <body>
 <div class="navbar text-center">
   <a class="logo" href="landing.html">
-    <img src="/images/university.png" alt="University Logo" style="width: 32px; height: 32px;">
+    <img src="/SIPP/images/university.png" alt="University Logo" style="width: 32px; height: 32px;">
   </a>
   <h1>Intervensi Percubaan</h1>
   <nav class="navbar-menu">
@@ -133,7 +133,7 @@ $png = "1.32";
     //markRisk("T000001");
   </script>
 </div>
-<form action="/src/plan_intervention.php" target="_self" method="POST">
+<form action="plan_intervention.php" target="_self" method="POST">
   <div id="intervention" class="container-fluid text-center"><h3>Merancang Intervensi</h3>
   <div class="caption">
   <h4>Sila pilih kategori intervensi dan mencadangkan panduan pengajian berdasarkan butiran prestasi di bawah.</h4><br />

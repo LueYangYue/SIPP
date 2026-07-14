@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id'])) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Analysis</title>
-  <link rel="icon" type="image/x-icon" href="/images/university.png">
+  <link rel="icon" type="image/x-icon" href="/SIPP/images/university.png">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -148,7 +148,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id'])) {
 <body>
   <nav class="navbar">
     <a class="navbar-logo" href="landing.html">
-      <img src="/images/university.png" alt="University Logo" style="width: 32px;height: 32px;">
+      <img src="/SIPP/images/university.png" alt="University Logo" style="width: 32px;height: 32px;">
     </a><h1>Analitik</h1>
   <nav class="navbar-menu">
     <button onclick="document.location='logout.php'" style="width: 95px; height: 32px; font-size: small">Log Keluar</button>

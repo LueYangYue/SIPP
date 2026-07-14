@@ -12,7 +12,7 @@ $_SESSION['stud_year']= 3;
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Percubaan</title>
-  <link rel="icon" type="image/x-icon" href="/images/university.png">
+  <link rel="icon" type="image/x-icon" href="/SIPP/images/university.png">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -165,7 +165,7 @@ $_SESSION['stud_year']= 3;
 <body>
 <div class="navbar text-center">
   <a class="logo" href="landing.html">
-    <img src="/images/university.png" alt="University Logo" style="width: 32px; height: 32px;">
+    <img src="/SIPP/images/university.png" alt="University Logo" style="width: 32px; height: 32px;">
   </a>
   <h1>Pendaftaran Percubaan</h1>
   <nav class="navbar-menu">
