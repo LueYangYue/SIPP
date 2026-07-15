@@ -1,11 +1,14 @@
 <?php
 //Open a database connection with PDO
-$servername = "db-pgsql-nyc1-13324-do-user-39786782-0.l.db.ondigitalocean.com";//"localhost" or "lrgs.ftsm.ukm.my"
-$username = "sippadmin";//Default username is "root", lrgs is "A202211", sipp is "sipp-admin"
+$host = "db-pgsql-nyc1-13324-do-user-39786782-0.l.db.ondigitalocean.com";//Default host is  "localhost"
+$port = "25060";
+$username = "sippadmin";//Default username is "root"
 $password = "AVNS_d3E94q7SNqXscgEAot-";//Default password is ""
-$dbname = "sippdb";//"sipp" or "a202211"
+$db = "sippdb";
+$ca = "/var/www/cert/ca-certificate.crt";
+
 try {
-    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $conn = new PDO("mysql:host=$host;port=$port;dbname=$db;charset=utf8mb4", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch(PDOException $e) {
     die("Connection failed: " . $e->getMessage());

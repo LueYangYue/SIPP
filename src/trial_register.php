@@ -179,12 +179,8 @@ $_SESSION['stud_year']= 3;
 <form>
 <div class="container-fluid">
   <div class="container-fluid text-center">
-    <!-- <div class="row">
-      <div class="col-sm-4 col-md-offset-1"><h2>Register for free!</h2></div>
-    </div> -->
     <div class="row">
       <div class="col-md-5 col-md-offset-1"><h3>Pendaftaran</h3></div>
-      <!-- <div class="col-sm-5"><h4>Daftar Nanti!</h4></div>  -->
     </div>
   </div>
   <!-- <div id="user-info" class="row"> -->
