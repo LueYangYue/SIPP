@@ -1,0 +1,14 @@
+{
+    "name": "lueyangyue/sipp",
+    "description": "Application for web-based student performance intervention system",
+    "require": {
+        "php-64bit": "^8.2.12",
+        "monolog/monolog": "2.1.*"
+    },
+    "authors": [
+        {
+            "name": "LueYangYue",
+            "email": "a202211@siswa.ukm.edu.my"
+        }
+    ]
+}
