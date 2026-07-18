@@ -177,24 +177,29 @@ function categorize ($suggestion){
     <div>
     <?php 
     try {
-      $sql = "SELECT * FROM pelan JOIN prestasi ON prestasi.kod = pelan.prestasi WHERE pelan.pensyarah = :id ORDER BY pelan.no ASC";
-      $stmt = $conn->prepare($sql);
+      $sql1 = "SELECT pelan.pelajar, pelan.panduan AS p, prestasi.kod AS k, prestasi.sesi AS s FROM pelan, prestasi ";
+      $sql2 = "WHERE prestasi.kod = pelan.prestasi AND pelan.pensyarah = :id ORDER BY pelan.no ASC";
+      $stmt = $conn->prepare($sql1 . $sql2);
       $stmt->bindParam(':id', $_SESSION['id']);
       $stmt->execute();
       if ($stmt->rowCount() > 0) {
         echo "<table>\n<caption>Rancangan intervensi prestasi</caption>\n";
         echo "<thead>\n<tr>\n";
-        echo "<th>No.</th>\n<th>Prestasi</th>\n<th>Pensyarah</th>\n<th>Pelajar</th>\n<th>Panduan</th>\n";
+        echo "<th>Prestasi</th>\n<th>Sesi</th>\n<th>Pelajar</th>\n<th>Nama Pelajar</th>\n<th>Panduan</th>\n";
         echo "</tr>\n</thead>\n";
         echo "<tbody>\n";
         while($row = $stmt->fetch()) {
-            echo "<tr>\n";
-            echo "<td>" . $row['no'] . "</td>\n";
-            echo "<td>" . $row['prestasi'] . "</td>\n";
-            echo "<td>" . $row['pensyarah'] . "</td>\n";
-            echo "<td>" . $row['pelajar'] . "</td>\n";
-            echo "<td>" . categorize($row['panduan']) . "</td>\n";
-            echo "</tr>\n";
+          $stud_id = $row['pelajar'];
+          $sql3 = "SELECT nama FROM pengguna where pengguna.id = '$stud_id'";
+          $result = $conn->query($sql3);
+          $student = $result->fetch();
+          echo "<tr>\n";
+          echo "<td>" . $row['k'] . "</td>\n";
+          echo "<td>" . $row['s'] . "</td>\n";
+          echo "<td>" . $stud_id . "</td>\n";
+          echo "<td>" . $student['nama'] . "</td>\n";
+          echo "<td>" . categorize($row['p']) . "</td>\n";
+          echo "</tr>\n";
         }
         echo "</tbody>\n</table>";
       } else {

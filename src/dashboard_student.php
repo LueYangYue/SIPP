@@ -215,7 +215,7 @@ function categorize ($suggestion){
     <div><h2>Panduan</h2>
       <?php 
       try {
-        $sql1 = "SELECT p.no, p.pensyarah, p.panduan, r.kursus, r.sesi, r.mata FROM pelan AS p JOIN prestasi AS r ON r.kod = p.prestasi ";
+        $sql1 = "SELECT p.no, p.pensyarah, p.panduan, r.kod, r.sesi, r.mata FROM pelan AS p JOIN prestasi AS r ON r.kod = p.prestasi ";
         $sql2 = "WHERE p.pelajar = :id ORDER BY p.no ASC";
         $stmt = $conn->prepare($sql1 . $sql2);
         $stmt->bindParam(':id', $_SESSION['id']);
@@ -223,12 +223,12 @@ function categorize ($suggestion){
         if ($stmt->rowCount() > 0) {
           echo "<table>\n<caption>Panduan prestasi berisiko</caption>\n";
           echo "<thead>\n<tr>\n";
-          echo "<th>Kursus</th>\n<th>Mata</th>\n<th>Sesi</th>\n<th>Pensyarah</th>\n<th>Panduan</th>\n";
+          echo "<th>Prestasi</th>\n<th>Mata</th>\n<th>Sesi</th>\n<th>Pensyarah</th>\n<th>Panduan</th>\n";
           echo "</tr>\n</thead>\n";
           echo "<tbody>\n";
           while($row = $stmt->fetch()) {
             echo "<tr>\n";
-            echo "<td>" . $row['kursus'] . "</td>\n";
+            echo "<td>" . $row['kod'] . "</td>\n";
             echo "<td>" . $row['mata'] . "</td>\n";
             echo "<td>" . $row['sesi'] . "</td>\n";
             echo "<td>" . $row['pensyarah'] . "</td>\n";
