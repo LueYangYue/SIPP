@@ -58,9 +58,9 @@ function analyzePerf(button) {
     const xhttp = new XMLHttpRequest();
     const id = button.parentNode.parentNode.children[0].textContent; 
     const name = button.parentNode.parentNode.children[1].textContent;
-    xhttp.open("GET", "analysis_perf.php?id=" + id + "&name=" + name, true);
+    xhttp.open("GET", "https://ukmsipp.me/SIPP/src/analysis_perf.php?id=" + id + "&name=" + name, true);
     xhttp.send();
-    document.location="analysis_perf.php?id=" + id + "&name=" + name;
+    document.location="https://ukmsipp.me/SIPP/src/analysis_perf.php?id=" + id + "&name=" + name;
 }
 //Please use session and semester
 //Assume short semester is not counted, functions below are not used
