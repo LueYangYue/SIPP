@@ -4,7 +4,7 @@ require_once 'database.php';
 
 if (!isset($_SESSION['id']) || $_SESSION['role'] != 1) {
     session_destroy();
-    header("Location: login.html");
+    header("Location: ukmsipp.me/SIPP/src/login.html");
     exit();
 }
 
@@ -35,8 +35,8 @@ function categorize ($suggestion){
   <link rel="icon" type="image/x-icon" href="https://ukmsipp.me/SIPP/images/university.png">
   <link rel="stylesheet" href="https://ukmsipp.me/SIPP/src/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <script src="visualize_perf.js"></script>
-  <script src="intervene_perf.js"></script>
+  <script src="https://ukmsipp.me/SIPP/src/visualize_perf.js"></script>
+  <script src="https://ukmsipp.me/SIPP/src/intervene_perf.js"></script>
   <style>
     :root {
       --blue-one: #0044ba;
