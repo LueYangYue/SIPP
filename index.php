@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script>document.location='/SIPP/src/landing.html'
+    <script>document.location='ukmsipp.me/SIPP/src/landing.html'
       /*fetch('https://lueyangyue.github.io/SIPP/src/landing.html')
         .then(response => response.text())
         .then(data => {
