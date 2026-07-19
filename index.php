@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script>document.location='ukmsipp.me/SIPP/src/landing.html'
-      /*fetch('https://lueyangyue.github.io/SIPP/src/landing.html')
+    <script>
+      fetch('https://github.com/LueYangYue/SIPP/src/landing.html')
         .then(response => response.text())
         .then(data => {
           document.innerHTML = data;
@@ -12,7 +12,7 @@
         })
         .catch(error => {
           console.error('Error fetching landing.html:', error);
-        });*/
+        });
     </script>
   </head>
   <body></body>
