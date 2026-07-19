@@ -13,15 +13,15 @@ $_SESSION['stud_year']= 3;
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Percubaan</title>
   <link rel="icon" type="image/x-icon" href="https://ukmsipp.me/SIPP/images/university.png">
-  <link rel="stylesheet" href="https://ukmsipp.me/src/styles.css">
+  <link rel="stylesheet" href="https://ukmsipp.me/SIPP/src/styles.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="https://ukmsipp.me/src/visualize_perf.js"></script>
-  <script src="https://ukmsipp.me.src/intervene_perf.js"></script>
+  <script src="https://ukmsipp.me/SIPP/src/visualize_perf.js"></script>
+  <script src="https://ukmsipp.me/SIPP/src/intervene_perf.js"></script>
   <style>
     :root {
       --orange: #ff8c00;
@@ -164,7 +164,7 @@ $_SESSION['stud_year']= 3;
 </head>
 <body>
 <div class="navbar text-center">
-  <a class="logo" href="landing.html">
+  <a class="logo" href="https://ukmsipp.me/SIPP/src/landing.html">
     <img src="https://ukmsipp.me/SIPP/images/university.png" alt="University Logo" style="width: 32px; height: 32px;">
   </a>
   <h1>Pendaftaran Percubaan</h1>

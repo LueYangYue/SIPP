@@ -28,8 +28,8 @@ $png = "1.32";
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="visualize_perf.js"></script>
-  <script src="intervene_perf.js"></script>
+  <script src="https://ukmsipp.me/SIPP/src/visualize_perf.js"></script>
+  <script src="https://ukmsipp.me/SIPP/src/intervene_perf.js"></script>
   <style>
     :root {
       --orange: #ff8c00;
