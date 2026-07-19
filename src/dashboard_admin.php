@@ -32,8 +32,8 @@ function categorize ($suggestion){
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Papan Pemuka</title>
-  <link rel="icon" type="image/x-icon" href="/SIPP/images/university.png">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/x-icon" href="https://ukmsipp.me/SIPP/images/university.png">
+  <link rel="stylesheet" href="https://ukmsipp.me/SIPP/src/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="visualize_perf.js"></script>
   <script src="intervene_perf.js"></script>
@@ -69,7 +69,7 @@ function categorize ($suggestion){
 </head>
 <body>
   <a class="home-logo" href="landing.html">
-    <img src="/SIPP/images/university.png" alt="University Logo" style="width: 32px;height: 32px;">
+    <img src="https://ukmsipp.me/SIPP/images/university.png" alt="University Logo" style="width: 32px;height: 32px;">
   </a>
   <aside class="sidebar">
     <div class="aside-links">
@@ -82,7 +82,7 @@ function categorize ($suggestion){
   <div class="navbar">
     <h1>Ketua Program</h1>
     <nav class="navbar-menu">
-      <button onclick="document.location='logout.php'">Log Keluar</button>
+      <button onclick="document.location='ukmsipp.me/SIPP/src/logout.php'">Log Keluar</button>
     </nav>
   </div>
   <section><p>Selamat datang, <?php echo $_SESSION['name']; ?>!</p></section>
