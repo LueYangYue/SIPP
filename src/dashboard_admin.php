@@ -129,7 +129,7 @@ function categorize ($suggestion){
       </optgroup>
       </select>
     </div></div>
-    <i>Sila pilih prestasi semester <?php echo $_SESSION['acad_session'];?> di Bahagian Prestasi untuk analisis.</i>
+    <i>Sila pilih prestasi semester/sesi <?php echo $_SESSION['acad_session'];?> di Bahagian Prestasi untuk analisis.</i>
     <div id="table-container">
       <script>filterYear(document.getElementsByClassName('dropdown-filter')[0].value);</script>
     </div>

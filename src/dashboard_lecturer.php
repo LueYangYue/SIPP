@@ -129,7 +129,7 @@ function categorize ($suggestion){
       </optgroup>
       </select>
     </div></div>
-    <i>Sila pilih prestasi semester <?php echo $_SESSION['acad_session'];?> di Bahagian Prestasi untuk analisis.</i>
+    <i>Sila pilih prestasi semester/sesi <?php echo $_SESSION['acad_session'];?> di Bahagian Prestasi untuk analisis.</i>
     <div id="table-container">
       <script>filterYear(document.getElementsByClassName('dropdown-filter')[0].value);</script>
     </div>
@@ -185,7 +185,7 @@ function categorize ($suggestion){
       if ($stmt->rowCount() > 0) {
         echo "<table>\n<caption>Rancangan intervensi prestasi</caption>\n";
         echo "<thead>\n<tr>\n";
-        echo "<th>Prestasi</th>\n<th>Sesi</th>\n<th>Pelajar</th>\n<th>Nama Pelajar</th>\n<th>Panduan</th>\n";
+        echo "<th>Prestasi</th>\n<th>Semester/Sesi</th>\n<th>Pelajar</th>\n<th>Nama Pelajar</th>\n<th>Panduan</th>\n";
         echo "</tr>\n</thead>\n";
         echo "<tbody>\n";
         while($row = $stmt->fetch()) {

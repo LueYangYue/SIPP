@@ -27,7 +27,7 @@ if (!isset($_GET['stud_id']) && !isset($_POST['student'])) {
   echo "</div>\n<div id=\"perf\" class=\"row\">\n";
   echo "<div class=\"col-sm-4 form-group\">\n<h4>No. Matrik</h4>\n";
   echo "<input type=\"text\" id=\"student\" name=\"student\" value=\"$stud_id\" readonly=\"readonly\">\n</div>\n";
-  echo "<div class=\"col-sm-4 form-group\">\n<h4>Sesi</h4>";
+  echo "<div class=\"col-sm-4 form-group\">\n<h4>Semester/Sesi</h4>";
   echo "<input type=\"text\" id=\"session\" name=\"session\" value=\"$session\" readonly=\"readonly\">\n</div>\n";
   echo "<div class=\"col-sm-4 form-group\">\n<h4>PNG</h4>\n";
   echo "<input type=\"number\" id=\"png\" name=\"png\" value=\"$png\" readonly=\"readonly\">\n</div>\n</div>\n";
@@ -72,7 +72,7 @@ if (!isset($_GET['stud_id']) && !isset($_POST['student'])) {
   $sql = "INSERT INTO pelan (no, pelajar, pensyarah, prestasi, panduan) VALUES (?, ?, ?, ?, ?)";
   $stmt = $conn->prepare($sql);
   $stmt->execute([$next_r, $_POST['student'], $_POST['lecturer'], $perf, $suggestion]);
-  exit("<script>alert('Rancangan intervensi bagi $perf telah berjaya dihantar.'); document.location = '/sipp/dashboard_admin.php';</script>");
+  exit("<script>alert('Rancangan intervensi bagi $perf telah berjaya dihantar.'); document.location = 'dashboard_admin.php';</script>");
   } catch (Exception $e) {
   echo "Error: " . $e->getMessage();
   }

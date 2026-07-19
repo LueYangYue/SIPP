@@ -164,7 +164,7 @@ function categorize ($suggestion){
 
       if ($sql->rowCount() > 0) {
         echo "<table>\n<caption>Prestasi berdasarkan kursus</caption>\n";
-        echo "<tr><th>Kursus</th><th>Nilai Gred</th><th>Sesi</th><th>Status Prestasi</th></tr>";
+        echo "<tr><th>Kursus</th><th>Nilai Gred</th><th>Semester/Sesi</th><th>Status Prestasi</th></tr>";
         while($row = $sql->fetch()) {
           echo "<tr>\n";
           echo "<td>" . $row['kursus'] . "</td>\n";
@@ -223,7 +223,7 @@ function categorize ($suggestion){
         if ($stmt->rowCount() > 0) {
           echo "<table>\n<caption>Panduan prestasi berisiko</caption>\n";
           echo "<thead>\n<tr>\n";
-          echo "<th>Prestasi</th>\n<th>Mata</th>\n<th>Sesi</th>\n<th>Pensyarah</th>\n<th>Panduan</th>\n";
+          echo "<th>Prestasi</th>\n<th>Mata</th>\n<th>Semester/Sesi</th>\n<th>Pensyarah</th>\n<th>Panduan</th>\n";
           echo "</tr>\n</thead>\n";
           echo "<tbody>\n";
           while($row = $stmt->fetch()) {

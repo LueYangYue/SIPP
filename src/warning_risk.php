@@ -52,7 +52,7 @@ try {
     $code = $row['kod'];
     $time = $row['masa'];
     $session = $row['sesi'];
-    echo "<button class=\"notification\" onclick=\"markRead(this,$no,'$id')\">$time<br />Prestasi $code sesi $session";
+    echo "<button class=\"notification\" onclick=\"markRead(this,$no,'$id')\">$time<br />Prestasi $session ($code)";
     echo " telah ditandai sebagai berisiko.<br />Sila ambil maklum. </button>\n";
     }
   }

@@ -2,7 +2,7 @@ function markRisk(studID) {
     const chart = document.getElementById("pngChart");
     const container = document.getElementsByClassName("intervention-container");
     chart.addEventListener("click", function() {
-        const session = prompt("Sila masukkan SESI prestasi berdasarkan label untuk menandakan risiko (Cth: 2/20252026)");
+        const session = prompt("Sila masukkan SEM/SESI prestasi berdasarkan label untuk menandakan risiko (Cth: 2/20252026)");
         fetch("warning_risk.php?stud_id=" + studID + "&session=" + session)
         .then(response=>response.text())
         .then(text => {
@@ -10,9 +10,9 @@ function markRisk(studID) {
                 container.innerHTML = text;
                 message = `Peringatan telah dihantar kepada pelajar ${studID} bagi prestasi ${session}`;
             } else if (text == "Berisiko"){
-                message = `Prestasi pelajar ${studID} bagi sesi ${session} SUDAH dinilai sebagai berisiko.`;
+                message = `Prestasi pelajar ${studID} bagi ${session} SUDAH dinilai sebagai berisiko.`;
             } else {
-                message = `Ralat: Semester prestasi tidak dikenal pasti, gagal menandakan risiko.`;
+                message = `Ralat: Semester/Sesi prestasi tidak dikenal pasti, gagal menandakan risiko.`;
                 console.log(text);
             }
             alert(message);
@@ -25,7 +25,7 @@ function planIntervention(studID) {
     const container = document.querySelector(".intervention-container");
     chart.addEventListener("click", function() {
         let message = "";
-        let session = prompt("Sila masukkan SESI prestasi berdasarkan label untuk menandakan risiko (Cth: 2/20252026)");
+        let session = prompt("Sila masukkan SEM/SESI prestasi berdasarkan label untuk menandakan risiko (Cth: 2/20252026)");
         fetch("warning_risk.php?stud_id=" + studID + "&session=" + session)
         .then(response=>response.text())
         .then(text => {
@@ -33,16 +33,16 @@ function planIntervention(studID) {
                 container.innerHTML = text;
                 message = `Peringatan telah dihantar kepada pelajar ${studID} bagi prestasi ${session}`;
             } else if (text == "Berisiko"){
-                message = `Prestasi pelajar ${studID} bagi sesi ${session} SUDAH dinilai sebagai berisiko.`;
+                message = `Prestasi pelajar ${studID} bagi ${session} SUDAH dinilai sebagai berisiko.`;
             } else {
-                message = `Ralat: Semester prestasi tidak dikenal pasti, gagal menandakan risiko.`;
+                message = `Ralat: Semester/Sesi prestasi tidak dikenal pasti, gagal menandakan risiko.`;
                 console.log(text);
             }
             alert(message);
             const makePlan = prompt("Adakah perancangan intervensi diperlukan? (Ya/Tidak)");
             if (makePlan.toLowerCase() === "ya") {
                 if (message === "" || message.substring(0, 5) === "Ralat") {
-                    session = prompt("Sila masukkan SESI prestasi berdasarkan label untuk merancang intervensi (Cth: 2/20252026)");
+                    session = prompt("Sila masukkan SEM/SESI prestasi berdasarkan label untuk merancang intervensi (Cth: 2/20252026)");
                 }
                 if (session.trim().match(/^\d+\/\d{4}\d{4}$/)) {
                     fetch("plan_intervention.php?stud_id=" + studID + "&session=" + session + "&plan_filled=false")
