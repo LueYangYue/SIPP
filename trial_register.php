@@ -179,22 +179,19 @@ $_SESSION['stud_year']= 3;
 <form>
 <div class="container-fluid">
   <div class="container-fluid text-center">
-    <div class="row">
-      <div class="col-md-5 col-md-offset-1"><h3>Pendaftaran</h3></div>
-    </div>
+    <div class="row"><h3>Pendaftaran</h3></div>
   </div>
-  <!-- <div id="user-info" class="row"> -->
-  <div class="row">
+  <div id="user-info" class="row">
     <div class="col-sm-6 form-group">
       <label for="username">ID</label>
-      <input type="text" id="username" name="id" value="T000001" required="required" readonly="readonly" autofocus>
+      <input type="text" id="username" name="id" value="U000001" required="required" readonly="readonly" autofocus>
     </div>
     <div class="col-sm-6 form-group">
       <label for="name">Nama</label>
       <input type="text" id="name" name="name" placeholder="Nama" required="required">
     </div>
   </div>
-  <div class="row">
+  <div id="password" class="row">
     <div class="col-sm-6 form-group">
       <label for="pw">Kata Laluan</label>
       <input type="password" id="pw" name="pw" placeholder="Kata Laluan" required="required">
@@ -206,14 +203,14 @@ $_SESSION['stud_year']= 3;
   </div>
   <div id="role" class="row">
     <div id="selection" class="col-sm-6">
-      <select class="form-control" name="lecturer" autofocus="autofocus">
+      <select class="form-control" name="year" autofocus="autofocus">
         <option value="Tiada pilihan" selected="selected">--Sila pilih tahun--</option>
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
         <option value="4">4</option>
       </select><br />
-      <select class="form-control" name="category" multiple="multiple">
+      <select class="form-control" name="course" multiple="multiple">
         <optgroup label="Kursus">
           <option value="TTTC3213">KEJURUTERAAN DATA</option>
           <option value="TTTE3503">PENGUJIAN PERISIAN</option>
@@ -224,11 +221,11 @@ $_SESSION['stud_year']= 3;
         </optgroup>
       </select><br />
     </div>
-    <div id="comment" class="col-sm-6">
-      <label class="text-center" for="intro">Cadangan</label><br />
-      <textarea id="intro" class="form-control align-center" name="intro_comment" rows="5" cols="50" 
-      placeholder="Pengenalan" autocomplete="on"></textarea>
-      <br /><input type="hidden" name="intro_filled" value="true" readonly="readonly"/>
+    <div id="list" class="col-sm-6">
+      <label class="text-center" for="perf">Prestasi</label><br />
+      <textarea id="perf" class="form-control align-center" name="perf_list" rows="5" cols="50" 
+      placeholder="Contoh: 2/20242025 3.51, 1/20252026 3.23, 2/20252026 3.28..." autocomplete="on"></textarea>
+      <br /><input type="hidden" name="perf_filled" value="true" readonly="readonly"/>
     </div>
   </div>
   <div class="col-sm-12 form-group"><input type="submit" value="Daftar"/></div>
