@@ -4,7 +4,7 @@ require_once 'database.php';
 
 if (!isset($_SESSION['id']) || $_SESSION['role'] != 3) {
     session_destroy();
-    header("Location: ukmsipp.me/SIPP/src/login.html");
+    header("Location: login.html");
     exit();
 }
 
@@ -122,8 +122,8 @@ function categorize ($suggestion){
   </style>
 </head>
 <body>
-  <a class="home-logo" href="ukmsipp.me/SIPP/src/landing.html">
-    <img src="ukmsipp.me/SIPP/images/university.png" alt="University Logo" style="width: 32px;height: 32px;">
+  <a class="home-logo" href="landing.html">
+    <img src="https://ukmsipp.me/SIPP/images/university.png" alt="University Logo" style="width: 32px;height: 32px;">
   </a>
   <aside class="sidebar">
     <div class="aside-links">

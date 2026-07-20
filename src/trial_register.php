@@ -169,7 +169,7 @@ $_SESSION['stud_year']= 3;
   </a>
   <h1>Pendaftaran Percubaan</h1>
   <nav class="navbar-menu">
-    <button onclick="document.location='/src/logout.php'" style="width: 95px; height: 32px; font-size: small">Log Keluar</button>
+    <button onclick="document.location='logout.php'" style="width: 95px; height: 32px; font-size: small">Log Keluar</button>
   </nav>
 </div>
 <div id="chart-container" class="container-fluid">

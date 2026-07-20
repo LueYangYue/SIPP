@@ -4,7 +4,7 @@ require_once 'database.php';
 
 if (!isset($_SESSION['id']) || $_SESSION['role'] != 2) {
     session_destroy();
-    header("Location: ukmsipp.me/SIPP/src/login.html");
+    header("Location: login.html");
     exit();
 }
 
@@ -82,7 +82,7 @@ function categorize ($suggestion){
   <div class="navbar">
     <h1>Pensyarah</h1>
     <nav class="navbar-menu">
-      <button onclick="document.location='ukmsipp.me/src/logout.php'">Log Keluar</button>
+      <button onclick="document.location='logout.php'">Log Keluar</button>
     </nav>
   </div>
   <section><p>Selamat datang, <?php echo $_SESSION['name']; ?>!</p></section>

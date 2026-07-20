@@ -5,7 +5,7 @@ require_once 'database.php';
 if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id'])) {
   if (!isset($_SESSION['id']) || ($_SESSION['role'] != 1 && $_SESSION['role'] != 2)) {
     echo "<script>alert(\"Session variables not found\");</script>";
-    header("Location: ukmsipp.me/SIPP/src/login.html");
+    header("Location: login.html");
     exit();
   } else {
     $id = $_GET['id'];

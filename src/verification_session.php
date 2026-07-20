@@ -32,17 +32,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         break;
       default:
         echo "<script>alert('Peranan tidak dikenali. Sila hubungi pentadbir.');
-        window.location.href='/src/login.html';</script>";
+        window.location.href='login.html';</script>";
     } exit();
   } else {
     // Invalid credentials, redirect back to login page with error message
     $_SESSION['no'] = $_SESSION['no'] + 1;
     if ($_SESSION['no'] >= 3) {// Resets after browser restarts.
       echo "<script>alert('Nama pengguna atau kata laluan telah salah sekurang-kurangnya 3 kali. " . 
-      "Hubungilah pentadbir untuk tukar kata laluan.'); window.location.href='/src/login.html';</script>";
+      "Hubungilah pentadbir untuk tukar kata laluan.'); window.location.href='login.html';</script>";
     } else {
       echo "<script>alert('Nama pengguna atau kata laluan adalah salah. Sila cuba lagi.');  
-      window.location.href='/src/login.html';</script>";
+      window.location.href='login.html';</script>";
     } exit();
   }
 }
