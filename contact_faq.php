@@ -64,13 +64,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="header-logo" href="https://ukmsipp.me/SIPP/src/landing.html">
+      <a class="header-logo" href="landing.html">
         <img src="https://ukmsipp.me/SIPP/images/university.png" alt="University Logo" style="width: 32px;height: 32px;">
       </a>
     </div>
     <div class="collapse navbar-collapse" id="barNav">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="https://ukmsipp.me/SIPP/src/landing.html">Hi</a></li>
+        <li><a href="landing.html">Hi</a></li>
         <li><a href="https://www.youtube.com/@UKMYangYue">Tentang Kami</a></li>
         <li><a href="mailto:a202211@siswa.ukm.edu.my">Hubungi Kami</a></li>
       </ul>

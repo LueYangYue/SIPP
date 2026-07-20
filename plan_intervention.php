@@ -20,7 +20,7 @@ if (!isset($_GET['stud_id']) && !isset($_POST['student'])) {
   $png = $stmt->fetchColumn();
   $stud_id = $_GET['stud_id'];
   $session = $_GET['session'];
-  echo "<form action=\"/src/plan_intervention.php\" method=\"POST\">\n";
+  echo "<form action=\"plan_intervention.php\" method=\"POST\">\n";
   echo "<div id=\"intervention\" class=\"container-fluid text-center\"><h3>Merancang Intervensi</h3>\n";
   echo "<div class=\"caption\">\n";
   echo "<h4>Sila pilih kategori intervensi dan mencadangkan panduan pengajian berdasarkan butiran prestasi di bawah.</h4><br />\n";
@@ -72,7 +72,7 @@ if (!isset($_GET['stud_id']) && !isset($_POST['student'])) {
   $sql = "INSERT INTO pelan (no, pelajar, pensyarah, prestasi, panduan) VALUES (?, ?, ?, ?, ?)";
   $stmt = $conn->prepare($sql);
   $stmt->execute([$next_r, $_POST['student'], $_POST['lecturer'], $perf, $suggestion]);
-  exit("<script>alert('Rancangan intervensi bagi $perf telah berjaya dihantar.'); document.location = '/src/dashboard_admin.php';</script>");
+  exit("<script>alert('Rancangan intervensi bagi $perf telah berjaya dihantar.'); document.location = 'ashboard_admin.php';</script>");
   } catch (Exception $e) {
   echo "Error: " . $e->getMessage();
   }

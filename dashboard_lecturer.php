@@ -68,7 +68,7 @@ function categorize ($suggestion){
   </style>
 </head>
 <body>
-  <a class="home-logo" href="https://ukmsipp.me/SIPP/src/landing.html">
+  <a class="home-logo" href="landing.html">
     <img src="https://ukmsipp.me/SIPP/images/university.png" alt="University Logo" style="width: 32px;height: 32px;">
   </a>
   <aside class="sidebar">
