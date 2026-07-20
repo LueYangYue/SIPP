@@ -72,7 +72,7 @@ if (!isset($_GET['stud_id']) && !isset($_POST['student'])) {
   $sql = "INSERT INTO pelan (no, pelajar, pensyarah, prestasi, panduan) VALUES (?, ?, ?, ?, ?)";
   $stmt = $conn->prepare($sql);
   $stmt->execute([$next_r, $_POST['student'], $_POST['lecturer'], $perf, $suggestion]);
-  exit("<script>alert('Rancangan intervensi bagi $perf telah berjaya dihantar.'); document.location = 'dashboard_admin.php';</script>");
+  exit("<script>alert('Rancangan intervensi bagi $perf telah berjaya dihantar.'); document.location = 'dashboard_phead.php';</script>");
   } catch (Exception $e) {
   echo "Error: " . $e->getMessage();
   }

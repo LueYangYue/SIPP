@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $_SESSION['role'] = $result['peranan'];
     switch ($_SESSION['role']) {
       case 1:
-        header("Location: dashboard_admin.php");
+        header("Location: dashboard_phead.php");
         break;
       case 2:
         header("Location: dashboard_lecturer.php");
