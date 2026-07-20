@@ -1,6 +1,5 @@
 <?php 
 session_start();
-require_once 'database.php';
 $_SESSION['id'] = "P000002";
 $_SESSION['role'] = 2;
 $_SESSION['stud_year'] = 3;
