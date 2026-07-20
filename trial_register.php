@@ -207,10 +207,11 @@ $_SESSION['stud_year']= 3;
   <div id="role" class="row">
     <div id="selection" class="col-sm-6">
       <select class="form-control" name="lecturer" autofocus="autofocus">
-        <option value="Tiada pilihan" selected="selected">--Sila pilih peranan--</option>
-        <option value="1">Ketua Program</option>
-        <option value="2">Pensyarah</option>
-        <option value="3">Pelajar</option>
+        <option value="Tiada pilihan" selected="selected">--Sila pilih tahun--</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
       </select><br />
       <select class="form-control" name="category" multiple="multiple">
         <optgroup label="Kursus">
