@@ -1,10 +1,10 @@
 <?php
 //Open a database connection with PDO
-$host = $DATABASE_HOST;//Default host is  "localhost"
-$port = $DATABASE_PORT;
-$username = $DATABASE_USER;//Default username is "root"
-$password = $DATABASE_PW;//Default password is ""
-$db = $DATABASE;
+$host = "dbaas-db-3754887-do-user-39786782-0.a.db.ondigitalocean.com";//Default host is  "localhost"
+$port = 25060;
+$username = sippadmin;//Default username is "root"
+$password = getenv('DATABASE_PW');//Default password is ""
+$db = sippdb;
 
 try {
     $conn = new PDO("mysql:host=$host;port=$port;dbname=$db;charset=utf8mb4", $username, $password);
