@@ -75,12 +75,3 @@ function markRead(button, no, id) {
     notifyRisk(id);
     alert("Peringatan telah ditandai sebagai dibaca.");
 }
-/*const button = document.querySelector(".notifications");
-button.addEventListener("mouseover", function() {
-    fetch("/src/warning_risk.php")
-    .then(response=>response.text())
-    .then(list => {
-        list.innerHTML = list;
-    });
-});
-*/

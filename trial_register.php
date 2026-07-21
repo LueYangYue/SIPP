@@ -233,11 +233,3 @@ $_SESSION['stud_year']= 3;
 </form>
 </body>
 </html>
-<!-- <script>
-  const bcrypt = require('bcrypt');
-  async function registerUser(password) {
-    const saltRounds = 10;
-    const hashedPassword = await bcrypt.hash(password, saltRounds);
-    return hashedPassword;
-  }
-</script> -->
