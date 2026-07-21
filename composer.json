@@ -3,7 +3,9 @@
     "description": "Application for web-based student performance intervention system",
     "require": {
         "php-64bit": "^8.2.12",
-        "monolog/monolog": "3.10.*"
+        "monolog/monolog": "3.10.*",
+        "ext-pdo": "*",
+        "ext-pdo_mysql": "*"
     },
     "authors": [
         {
