@@ -64,13 +64,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="header-logo" href="landing.html">
+      <a class="header-logo" href="https://lueyangyue.github.io/SIPP/landing.html">
         <img src="https://ukmsipp.me/SIPP/images/university.png" alt="University Logo" style="width: 32px;height: 32px;">
       </a>
     </div>
     <div class="collapse navbar-collapse" id="barNav">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="landing.html">Hi</a></li>
+        <li><a href="https://lueyangyue.github.io/SIPP/landing.html">Hi</a></li>
         <li><a href="https://www.youtube.com/@UKMYangYue">Tentang Kami</a></li>
         <li><a href="mailto:a202211@siswa.ukm.edu.my">Hubungi Kami</a></li>
       </ul>
@@ -89,15 +89,15 @@
   <div class="row">
     <div class="col-sm-4">
       <p>Adakah anda sudah mendaftar akaun siswa sebelum log masuk ke dalam SIPP? Jika tidak, hubungilah pentadbir sekarang!</p>
-      <img src="images/feature1.png" class="img-responsive" alt="Image" style="display:inline">
+      <img src="https://lueyangyue.github.io/SIPP/images/feature1.png" class="img-responsive" alt="Image" style="display:inline">
     </div>
     <div class="col-sm-4">
       <p>Ada pertanyaan tentang analitik prestasi pelajar? Tanyalah dengan borang di bawah!</p>
-      <img src="images/feature2.png" class="img-responsive" alt="Image" style="display:inline">
+      <img src="https://lueyangyue.github.io/SIPP/images/feature2.png" class="img-responsive" alt="Image" style="display:inline">
     </div>
     <div class="col-sm-4">
       <p>Hadapi masalah ketika menggunakan fungsi lain SIPP? Mintalah bantuan di sini!</p>
-      <img src="images/feature3.png" class="img-responsive" alt="Image" style="display:inline">
+      <img src="https://lueyangyue.github.io/SIPP/images/feature3.png" class="img-responsive" alt="Image" style="display:inline">
     </div>
 </div>
 <div class="container-fluid bg-3 text-center" id="where">

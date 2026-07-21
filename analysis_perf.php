@@ -148,7 +148,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id'])) {
 <body>
   <nav class="navbar">
     <a class="navbar-logo" href="landing.html">
-      <img src="images/university.png" alt="University Logo" style="width: 32px;height: 32px;">
+      <img src="https://ukmsipp.me/SIPP/images/university.png" alt="University Logo" style="width: 32px;height: 32px;">
     </a><h1>Analitik</h1>
   <nav class="navbar-menu">
     <button onclick="document.location='logout.php'" style="width: 95px; height: 32px; font-size: small">Log Keluar</button>
