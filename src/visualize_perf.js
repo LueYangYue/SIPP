@@ -54,13 +54,12 @@ function visualizePNG(session = "2/20252026", semester = 6, name = "Pelajar", po
     });
 }
 
-function analyzePerf(button) {
+function analyzePerf(button, gp) {
     const xhttp = new XMLHttpRequest();
     const id = button.parentNode.parentNode.children[0].textContent; 
-    const name = button.parentNode.parentNode.children[1].textContent;
-    xhttp.open("GET", "https://ukmsipp.me/SIPP/src/analysis_perf.php?id=" + id + "&name=" + name, true);
+    xhttp.open("GET", "analysis_perf.php?id=" + id + "&gp=" + gp, true);
     xhttp.send();
-    document.location="https://ukmsipp.me/SIPP/src/analysis_perf.php?id=" + id + "&name=" + name;
+    document.location="analysis_perf.php?id=" + id + "&gp=" + gp;
 }
 //Please use session and semester
 //Assume short semester is not counted, functions below are not used

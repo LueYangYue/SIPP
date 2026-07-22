@@ -9,9 +9,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id'])) {
     exit();
   } else {
     $id = $_GET['id'];
-    $name = $_GET['name'];
+    $_SESSION['gp_code'] = $_GET['gp'];
     try {
-      $sql = "SELECT * FROM pelajar WHERE id = '$id'";
+      $sql = "SELECT * FROM pengguna JOIN pelajar ON pengguna.id = pelajar.id WHERE pelajar.id = '$id'";
       $result = $conn->query($sql);
       $student = $result->fetch(PDO::FETCH_ASSOC);
       $sql = "SELECT sesi, mata FROM prestasi WHERE kursus = 'PNG' AND pelajar = '$id'";
@@ -30,6 +30,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id'])) {
       } else {
         echo "Tiada rekod.";
       }
+
+      $sql = "SELECT prestasi.status FROM prestasi WHERE kod = '" . $_SESSION['gp_code'] . "'";
+      $result = $conn->query($sql);
+      $result = $result->fetch();
+      $status = $result['status'];
+      if (str_starts_with($status, 'B')) {
+        $status = substr_replace($status, 'D', 0, 1);
+        $sql = "UPDATE prestasi SET prestasi.status = '$status' WHERE kod = '" . $_SESSION['gp_code'] . "'";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();}
     } catch (PDOException $e) {
       die("Query failed: " . $e->getMessage());
     }
@@ -159,7 +169,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id'])) {
     <script>
       const session = "<?php echo $_SESSION['acad_session'];?>";
       const semester = <?php echo $student['semester'];?>;
-      const name = "<?php echo $name;?>";
+      const name = "<?php echo $student['nama'];?>";
       const points = <?php echo json_encode($points);?>;
       const sessions = <?php echo json_encode($sessions);?>;
       visualizePNG(session, semester, name, points, sessions);
