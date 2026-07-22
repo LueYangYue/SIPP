@@ -5,12 +5,16 @@
         "php-64bit": "^8.2.12",
         "monolog/monolog": "3.10.*",
         "ext-pdo": "*",
-        "ext-pdo_mysql": "*"
+        "ext-pdo_mysql": "*",
+        "laravel/framework": "^12.64"
     },
     "authors": [
         {
             "name": "LueYangYue",
             "email": "a202211@siswa.ukm.edu.my"
         }
-    ]
+    ],
+    "require-dev": {
+        "symfony/symfony": "^7.4"
+    }
 }
