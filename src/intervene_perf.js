@@ -9,7 +9,7 @@ function markRisk(studID) {
             if (text == "") {
                 container.innerHTML = text;
                 message = `Peringatan telah dihantar kepada pelajar ${studID} bagi prestasi ${session}`;
-            } else if (text == "Berisiko"){
+            } else if (text == "Berisiko") {
                 message = `Prestasi pelajar ${studID} bagi ${session} SUDAH dinilai sebagai berisiko.`;
             } else {
                 message = `Ralat: Semester/Sesi prestasi tidak dikenal pasti, gagal menandakan risiko.`;
@@ -32,7 +32,7 @@ function planIntervention(studID) {
             if (text == "") {
                 container.innerHTML = text;
                 message = `Peringatan telah dihantar kepada pelajar ${studID} bagi prestasi ${session}`;
-            } else if (text == "Berisiko"){
+            } else if (text == "Berisiko") {
                 message = `Prestasi pelajar ${studID} bagi ${session} SUDAH dinilai sebagai berisiko.`;
             } else {
                 message = `Ralat: Semester/Sesi prestasi tidak dikenal pasti, gagal menandakan risiko.`;
@@ -42,8 +42,7 @@ function planIntervention(studID) {
             const makePlan = prompt("Adakah perancangan intervensi diperlukan? (Ya/Tidak)");
             if (makePlan.toLowerCase() === "ya") {
                 if (message === "" || message.substring(0, 5) === "Ralat") {
-                    session = prompt("Sila masukkan SEM/SESI prestasi berdasarkan label untuk merancang intervensi (Cth: 2/20252026)");
-                }
+                    session = prompt("Sila masukkan SEM/SESI prestasi berdasarkan label untuk merancang intervensi (Cth: 2/20252026)");}
                 if (session.trim().match(/^\d+\/\d{4}\d{4}$/)) {
                     fetch("plan_intervention.php?stud_id=" + studID + "&session=" + session + "&plan_filled=false")
                     .then(response => response.text())
@@ -71,8 +70,7 @@ function markRead(button, no, id) {
     .then(response=>response.text())
     .then(text => {
         list.innerHTML = text;
-    });
-    notifyRisk(id);
+    }); notifyRisk(id);
     alert("Peringatan telah ditandai sebagai dibaca.");
 }
 

@@ -14,6 +14,14 @@ try {
   $sql = "UPDATE prestasi SET prestasi.status = \"Berisiko\" WHERE kursus = 'PNG' AND pelajar = ? AND sesi = ?";
   $stmt = $conn->prepare($sql);
   $stmt->execute([$_GET['stud_id'], trim($_GET['session'])]);
+  $sql = "SELECT prestasi.status FROM prestasi WHERE kod = ?";
+  $stmt = $conn->prepare($sql);
+  $stmt->execute([$_SESSION['gp_code']]);
+  $gp_status = $stmt->fetchColumn();
+  if (substr($gp_status, 0, 1) !== 'R') {
+    $sql = "UPDATE prestasi SET `status` = 'P Berisiko' WHERE kod = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute($_SESSION['gp_code']);}
   $sql = "UPDATE pelajar SET pelajar.status = \"Berisiko\" WHERE pelajar.id = ?";
   $stmt = $conn->prepare($sql);
   $stmt->execute([$_GET['stud_id']]);
@@ -28,9 +36,7 @@ try {
   $sql = "INSERT INTO peringatan (no, prestasi) VALUES (?, ?)";
   $stmt = $conn->prepare($sql);
   $stmt->execute([$next_r, $perf]);
-} catch (Exception $e) {
-  exit($e->getMessage());
-}
+} catch (Exception $e) {exit($e->getMessage());}
 } else if (isset($_GET['id']) && !isset($_GET['no'])) {
 try {
   $sql1 = "SELECT COUNT(no) FROM peringatan AS e JOIN prestasi AS r ON e.prestasi = r.kod WHERE dibaca = 0 AND r.pelajar = ?";
@@ -53,19 +59,12 @@ try {
     $time = $row['masa'];
     $session = $row['sesi'];
     echo "<button class=\"notification\" onclick=\"markRead(this,$no,'$id')\">$time<br />Prestasi $session ($code)";
-    echo " telah ditandai sebagai berisiko.<br />Sila ambil maklum. </button>\n";
-    }
-  }
-} catch (Exception $e) {
-  exit($e->getMessage());
-}
+    echo " telah ditandai sebagai berisiko.<br />Sila ambil maklum. </button>\n";}}
+} catch (Exception $e) {exit($e->getMessage());}
 } else if (isset($_GET['no'])) {
 try {
   $sql = "UPDATE peringatan SET dibaca = 1 WHERE no = ?";
   $stmt = $conn->prepare($sql);
   $stmt->execute([$_GET['no']]);
-} catch (Exception $e) {
-  exit($e->getMessage());
-}
-}
+} catch (Exception $e) {exit($e->getMessage());}}
 ?>

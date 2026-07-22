@@ -40,8 +40,7 @@ if (!isset($_GET['stud_id']) && !isset($_POST['student'])) {
     $sql = "SELECT nama FROM pengguna WHERE id = '$lect_id'";
     $result = $conn->query($sql);
     $lect_name = $result->fetchColumn();
-    echo "<option value=\"$lect_id\">$lect_name</option>\n";
-  }}
+    echo "<option value=\"$lect_id\">$lect_name</option>\n";}}
   echo "</select><br />\n";
   echo "<select class=\"form-control\" name=\"category\" multiple=\"multiple\">\n";
   echo "<optgroup label=\"Kategori\">\n";
@@ -55,8 +54,7 @@ if (!isset($_GET['stud_id']) && !isset($_POST['student'])) {
   echo "<br />\n<input type=\"hidden\" name=\"plan_filled\" value=\"true\" readonly=\"readonly\"/>\n</div>\n</div>\n";
   echo "<div class=\"col-sm-12 form-group\"><input type=\"submit\" value=\"Merancang\"/></div>\n</div>\n</form>";
   } catch (Exception $e) {
-  echo "Error: " . $e->getMessage();  
-  }
+  echo "Error: " . $e->getMessage();}
 } else if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['student']) && $_POST['plan_filled'] === "true") {
   try {
   $_SESSION['id'] = 'P000001'; $_SESSION['role'] = 1;
@@ -72,6 +70,14 @@ if (!isset($_GET['stud_id']) && !isset($_POST['student'])) {
   $sql = "INSERT INTO pelan (no, pelajar, pensyarah, prestasi, panduan) VALUES (?, ?, ?, ?, ?)";
   $stmt = $conn->prepare($sql);
   $stmt->execute([$next_r, $_POST['student'], $_POST['lecturer'], $perf, $suggestion]);
+  $gp_code = $_SESSION['gp_code'];
+  $sql = "SELECT `status` FROM prestasi WHERE kod = '$gp_code'";
+  $result = $conn->query($sql);
+  $gp_status = $result->fetch();
+  $gp_status = substr_replace($gp_status, 'R', 0, 1);
+  $sql = "UPDATE prestasi SET `status` = '$gp_status' WHERE kod = ?";
+  $stmt = $conn->prepare($sql);
+  $stmt->execute($gp_code);
   exit("<script>alert('Rancangan intervensi bagi $perf telah berjaya dihantar.'); document.location = 'dashboard_phead.php';</script>");
   } catch (Exception $e) {
   echo "Error: " . $e->getMessage();
