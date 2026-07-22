@@ -1,5 +1,5 @@
 -- Database Setup
--- 1. User registration (Kod Status: D-Dinilai, B-Belum Dinilai, T-Tidak Lengkap)
+-- 1. User registration (Kod Status: R-Rancangan Dihantar, P-Peringatan Diberi, D-Dinilai Risiko, B-Belum Dinilai, T-Tidak Lengkap)
 INSERT INTO `pengguna`(`id`, `kataLaluan`, `nama`, `sesi`, `peranan`) VALUES ('U000001','1234567', 'Penguji A', '2/20232024', '10')
 INSERT INTO `pengguna`(`id`, `kataLaluan`, `nama`, `sesi`, `peranan`) VALUES ('A000003','1234567','Pelajar C','2/20252026','3')
 INSERT INTO `pelajar`(`id`, `tahun`, `semester`, `status`) VALUES ('A000003','1','1','Selamat')
@@ -15,7 +15,7 @@ INSERT INTO `kursus` VALUES
 ('TTTC3213', 'KEJURUTERAAN DATA', 'P000002'), 
 ('TTTE3503', 'PENGUJIAN PERISIAN', 'P000003'), 
 ('TTTU3404', 'PEMBANGUNAN PERISIAN UTK IS', 'P000003')
--- 3. Performance recording (Grade D+ 1.33 onwards is risky)
+-- 3. Performance recording (K1 below Grade C 2.00, K2 below Grade D+ 1.33, K3 below Grade D 1.00 is risky)
 INSERT INTO `prestasi` VALUES 
 ('M000001','A000001','TTTU2983','2/20252026',1.31,'Berisiko'), 
 ('M000002','A000001','TTTU4172','2/20252026',1.32,'Berisiko'), 
