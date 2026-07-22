@@ -167,7 +167,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id'])) {
       const role = <?php echo $_SESSION['role'];?>;
       const id = "<?php echo $student['id'];?>"
       if (role == 1) {planIntervention(id);} else if (role == 2) {markRisk(id);}
-    </script>
+    </script><small><strong>Panduan Penandaan Risiko Kegagalan Berdasarkan Kumpulan (Nilai gred KURANG DARIPADA) <br />
+    </strong>[K1 < Gred C (2.00) | K2 < Gred D+ (1.33) | K3 < Gred D (1.00)]</small>
   </div>
 </body>
 </html>
