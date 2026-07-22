@@ -29,6 +29,29 @@ a {
   text-decoration: none;
   color: inherit;
 }
+b.R, b.P, b.D, b.B, b.T {
+  border-radius: 10px;
+}
+b.R {
+  background-color: hsla(218, 100%, 50%, 0.1);
+  color: #005fff;
+}
+b.P {
+  background-color: hsla(271, 100%, 35%, 0.1);
+  color: #5d00b4;
+}
+b.D {
+  background-color: hsla(182, 25%, 50%, 0.1);
+  color: #5f9ea0;
+}
+b.B {
+  background-color: hsla(356, 100%, 43%, 0.1);
+  color: #da000f;
+}
+b.T {
+  background-color: hsla(0, 0%, 44%, 0.1);
+  color: #6f6f6f;
+}
 aside {
   float: left;
   display: flex;
@@ -100,7 +123,7 @@ section {
   position: relative;
   padding: 2rem;
   gap: 1.5rem;
-}
+} small {line-height: 1.5;}
 table, th, td {
   border-collapse: collapse; 
   text-align: center;

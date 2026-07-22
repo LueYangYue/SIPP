@@ -166,14 +166,18 @@ function categorize ($suggestion){
         echo "<table>\n<caption>Prestasi berdasarkan kursus</caption>\n";
         echo "<tr><th>Kursus</th><th>Nilai Gred</th><th>Semester/Sesi</th><th>Status Prestasi</th></tr>";
         while($row = $sql->fetch()) {
+          $gp_status = explode(' ', $row['status']);
           echo "<tr>\n";
           echo "<td>" . $row['kursus'] . "</td>\n";
           echo "<td>" . $row['mata'] . "</td>\n";
           echo "<td>" . $row['sesi'] . "</td>\n";
-          echo "<td>" . $row['status'] . "</td>\n";
-          echo "</tr>";
-        }
+          echo "<td><b class=" . $gp_status[0] . ">" . $gp_status[0] . "</b> " . $gp_status[1] . "</td>\n";
+          echo "</tr>\n";}
         echo "</table>\n";
+        echo "<small><strong>Petunjuk Risiko Kegagalan Berdasarkan Kumpulan (Nilai gred KURANG DARIPADA)</strong><br />";
+        echo "[K1 < Gred C (2.00) | K2 < Gred D+ (1.33) | K3 < Gred D (1.00)]<br />";
+        echo "Kod Status: <b class=\"R\">R</b>-Rancangan Dihantar, <b class=\"P\">P</b>-Peringatan Diberi, ";
+        echo "<b class=\"D\">D</b>-Dinilai Risiko, <b class=\"B\">B</b>-Belum Dinilai, <b class=\"T\">T</b>-Tidak Lengkap</small>";
       } else {
         echo "Tiada rekod.";
       }

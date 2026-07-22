@@ -21,27 +21,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_SESSION['id']) && isset($_GE
     $s = $row['pelajar'];
     $sql3 = "SELECT pengguna.id, nama, sesi, pelajar.status FROM pengguna JOIN pelajar ON pengguna.id = pelajar.id WHERE pengguna.id = '$s'";
     $result = $conn->query($sql3);
+    $code_perf = $row['kod'];
     $acad_perf = $row['mata'];
-    if (str_starts_with($row['status'], 'T')) {
-    $acad_perf = "Analitik PNG";}
+    $gp_status = substr($row['status'], 0, 1);
+    if ($gp_status === 'T') {$acad_perf = "Analitik PNG";}
     if ($row_student = $result->fetch()) {
     echo "<tr>\n";
     echo "<td>" . $row_student['id'] . "</td>\n";
     echo "<td>" . $row_student['nama'] . "</td>\n";
     echo "<td>" . $row_student['status'] . "</td>\n";
     echo "<td>" . $row['kursus'] . "</td>\n";
-    echo "<td>";
-    echo("<button name=\"perf\" class=\"perf-button\" onclick=\"analyzePerf(this)\">$acad_perf</button>");
+    echo "<td><b class=\"$gp_status\">$gp_status</b>";
+    echo("<button name=\"perf\" class=\"perf-button\" onclick=\"analyzePerf(this, $code_perf)\">$acad_perf</button>");
     echo "</td>\n";
-    echo "</tr>\n";
-    }}
+    echo "</tr>\n";}}
     echo "</tbody>\n</table>\n";
+    echo "<small><strong>Petunjuk Risiko Kegagalan Berdasarkan Kumpulan (Nilai gred KURANG DARIPADA)</strong><br />";
+    echo "[K1 < Gred C (2.00) | K2 < Gred D+ (1.33) | K3 < Gred D (1.00)]<br />";
+    echo "Kod Status: <b class=\"R\">R</b>-Rancangan Dihantar, <b class=\"P\">P</b>-Peringatan Diberi, ";
+    echo "<b class=\"D\">D</b>-Dinilai Risiko, <b class=\"B\">B</b>-Belum Dinilai, <b class=\"T\">T</b>-Tidak Lengkap</small>";
     } else {
-    echo "Tiada rekod.";
-    }}
+    echo "Tiada rekod.";}}
     catch(PDOException $e) {
-    die("Query failed: " . $e->getMessage());
-    }
+    die("Query failed: " . $e->getMessage());}
   } else {
   try {
   $sql1 = "SELECT p.id AS pi, p.nama AS pn, l.status AS ls, k.kod AS kk, k.nama AS kn, r.kod AS rk, r.mata AS rm ";
@@ -62,27 +64,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_SESSION['id']) && isset($_GE
     echo "</tr>\n</thead>\n";
     echo "<tbody>\n";
     while($row = $stmt1->fetch(PDO::FETCH_ASSOC)) {
+    $code_perf = $row['rk'];
     $acad_perf = $row['rm'];
-    if (str_starts_with($row['ls'], 'T')) {
-    $acad_perf = "Analitik PNG";
-    }
+    $gp_status = substr($row['status'], 0, 1);
+    if ($gp_status === 'T') {$acad_perf = "Analitik PNG";}
     echo "<tr>\n";
     echo "<td>" . $row['pi'] . "</td>\n";
     echo "<td>" . $row['pn'] . "</td>\n";
     echo "<td>" . $row['ls'] . "</td>\n";
     echo "<td>" . $row['kk'] . "</td>\n";
-    echo "<td>";
-    echo("<button name=\"perf\" class=\"perf-button\" onclick=\"analyzePerf(this)\">$acad_perf</button>");
+    echo "<td><b class=\"$status_perf\">$status_perf</b>";
+    echo("<button name=\"perf\" class=\"perf-button\" onclick=\"analyzePerf(this, $code_perf)\">$acad_perf</button>");
     echo "</td>\n";
-    echo "</tr>\n";
-    }
+    echo "</tr>\n";}
     echo "</tbody>\n</table>\n";
+    echo "<small><strong>Petunjuk Risiko Kegagalan Berdasarkan Kumpulan (Nilai gred KURANG DARIPADA)</strong><br />";
+    echo "[K1 < Gred C (2.00) | K2 < Gred D+ (1.33) | K3 < Gred D (1.00)]<br />";
+    echo "Kod Status: <b class=\"R\">R</b>-Rancangan Dihantar, <b class=\"P\">P</b>-Peringatan Diberi, ";
+    echo "<b class=\"D\">D</b>-Dinilai Risiko, <b class=\"B\">B</b>-Belum Dinilai, <b class=\"T\">T</b>-Tidak Lengkap</small>";
   } else {
-    echo "Tiada rekod.";
-  }}
+    echo "Tiada rekod.";}}
   catch(PDOException $e) {
-  die("Query failed: " . $e->getMessage());
-  }}
-  $conn = null;
-}
+  die("Query failed: " . $e->getMessage());}}
+  $conn = null;}
 ?>
