@@ -11,10 +11,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id'])) {
     $id = $_GET['id'];
     $name = $_GET['name'];
     try {
-      $sql = "SELECT * FROM pelajar WHERE id = '" . $id . "'";
+      $sql = "SELECT * FROM pelajar WHERE id = '$id'";
       $result = $conn->query($sql);
       $student = $result->fetch(PDO::FETCH_ASSOC);
-      $sql = "SELECT sesi, mata FROM prestasi WHERE kursus = 'PNG' AND pelajar = '" . $id . "'";
+      $sql = "SELECT sesi, mata FROM prestasi WHERE kursus = 'PNG' AND pelajar = '$id'";
       $result = $conn->query($sql);
       $perfs = $result->fetchAll();
       $points = [];
@@ -33,7 +33,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id'])) {
     } catch (PDOException $e) {
       die("Query failed: " . $e->getMessage());
     }
-    $conn = null;
   }
 }
 ?>
@@ -167,7 +166,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id'])) {
       const role = <?php echo $_SESSION['role'];?>;
       const id = "<?php echo $student['id'];?>"
       if (role == 1) {planIntervention(id);} else if (role == 2) {markRisk(id);}
-    </script>
+    </script><small><strong>Panduan Penandaan Risiko Kegagalan Berdasarkan Kumpulan (Nilai gred KURANG DARIPADA) <br />
+    </strong>[K1 < Gred C (2.00) | K2 < Gred D+ (1.33) | K3 < Gred D (1.00)]</small>
   </div>
 </body>
 </html>
