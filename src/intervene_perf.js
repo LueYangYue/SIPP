@@ -1,9 +1,9 @@
-function markRisk(studID) {
+function markRisk(studID, gpCode) {
     const chart = document.getElementById("pngChart");
     const container = document.getElementsByClassName("intervention-container");
     chart.addEventListener("click", function() {
         const session = prompt("Sila masukkan SEM/SESI prestasi berdasarkan label untuk menandakan risiko (Cth: 2/20252026)");
-        fetch("warning_risk.php?stud_id=" + studID + "&session=" + session)
+        fetch("warning_risk.php?stud_id=" + studID + "&gp_code=" + gpCode + "&session=" + session)
         .then(response=>response.text())
         .then(text => {
             if (text == "") {
@@ -20,13 +20,13 @@ function markRisk(studID) {
     });
 };
 
-function planIntervention(studID) {
+function planIntervention(studID, gpCode) {
     const chart = document.querySelector("#pngChart");
     const container = document.querySelector(".intervention-container");
     chart.addEventListener("click", function() {
         let message = "";
         let session = prompt("Sila masukkan SEM/SESI prestasi berdasarkan label untuk menandakan risiko (Cth: 2/20252026)");
-        fetch("warning_risk.php?stud_id=" + studID + "&session=" + session)
+        fetch("warning_risk.php?stud_id=" + studID + "&gp_code=" + gpCode + "&session=" + session)
         .then(response=>response.text())
         .then(text => {
             if (text == "") {
@@ -44,7 +44,7 @@ function planIntervention(studID) {
                 if (message === "" || message.substring(0, 5) === "Ralat") {
                     session = prompt("Sila masukkan SEM/SESI prestasi berdasarkan label untuk merancang intervensi (Cth: 2/20252026)");}
                 if (session.trim().match(/^\d+\/\d{4}\d{4}$/)) {
-                    fetch("plan_intervention.php?stud_id=" + studID + "&session=" + session + "&plan_filled=false")
+                    fetch("plan_intervention.php?stud_id=" + studID + "&gp_code=" + gpCode + "&session=" + session + "&plan_filled=false")
                     .then(response => response.text())
                     .then(form => {
                         container.innerHTML = form;

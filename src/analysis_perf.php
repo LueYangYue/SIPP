@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id'])) {
     exit();
   } else {
     $id = $_GET['id'];
-    $_SESSION['gp_code'] = $_GET['gp'];
+    $gp = $_GET['gp'];
     try {
       $sql = "SELECT * FROM pengguna JOIN pelajar ON pengguna.id = pelajar.id WHERE pelajar.id = '$id'";
       $result = $conn->query($sql);
@@ -31,13 +31,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id'])) {
         echo "Tiada rekod.";
       }
 
-      $sql = "SELECT prestasi.status FROM prestasi WHERE kod = '" . $_SESSION['gp_code'] . "'";
+      $sql = "SELECT prestasi.status FROM prestasi WHERE kod = '$gp'";
       $result = $conn->query($sql);
       $result = $result->fetch();
       $status = $result['status'];
       if (str_starts_with($status, 'B')) {
         $status = substr_replace($status, 'D', 0, 1);
-        $sql = "UPDATE prestasi SET prestasi.status = '$status' WHERE kod = '" . $_SESSION['gp_code'] . "'";
+        $sql = "UPDATE prestasi SET prestasi.status = '$status' WHERE kod = '$gp'";
         $stmt = $conn->prepare($sql);
         $stmt->execute();}
     } catch (PDOException $e) {
@@ -174,8 +174,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id'])) {
       const sessions = <?php echo json_encode($sessions);?>;
       visualizePNG(session, semester, name, points, sessions);
       const role = <?php echo $_SESSION['role'];?>;
-      const id = "<?php echo $student['id'];?>"
-      if (role == 1) {planIntervention(id);} else if (role == 2) {markRisk(id);}
+      const id = "<?php echo $student['id'];?>";
+      const gp = "<?php echo $gp;?>";
+      if (role == 1) {planIntervention(id, gp);} else if (role == 2) {markRisk(id, gp);}
     </script><small><strong>Panduan Penandaan Risiko Kegagalan Berdasarkan Kumpulan (Nilai gred KURANG DARIPADA) <br />
     </strong>[K1 < Gred C (2.00) | K2 < Gred D+ (1.33) | K3 < Gred D (1.00)]</small>
   </div>

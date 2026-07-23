@@ -4,7 +4,7 @@ require_once 'database.php';
 if (!isset($_GET['stud_id']) && !isset($_GET['id']) && !isset($_GET['session']) && !isset($_GET['no'])) {
   session_destroy();
   exit();
-} else if (isset($_GET['stud_id'])) {
+} else if (isset($_GET['stud_id']) && isset($_GET['session'])) {
 try {
   $sql = "SELECT prestasi.status FROM prestasi WHERE kursus = 'PNG' AND pelajar = ? AND sesi = ?";
   $stmt = $conn->prepare($sql);
@@ -16,12 +16,12 @@ try {
   $stmt->execute([$_GET['stud_id'], trim($_GET['session'])]);
   $sql = "SELECT prestasi.status FROM prestasi WHERE kod = ?";
   $stmt = $conn->prepare($sql);
-  $stmt->execute([$_SESSION['gp_code']]);
+  $stmt->execute([$_GET['gp_code']]);
   $gp_status = $stmt->fetchColumn();
-  if (substr($gp_status, 0, 1) !== 'R') {
-    $sql = "UPDATE prestasi SET `status` = 'P Berisiko' WHERE kod = ?";
+  if (!str_starts_with($gp_status, 'R') && $status === "Selamat") {
+    $sql = "UPDATE prestasi SET prestasi.status = \"P Berisiko\" WHERE prestasi.kod = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->execute($_SESSION['gp_code']);}
+    $stmt->execute([$_GET['gp_code']]);}
   $sql = "UPDATE pelajar SET pelajar.status = \"Berisiko\" WHERE pelajar.id = ?";
   $stmt = $conn->prepare($sql);
   $stmt->execute([$_GET['stud_id']]);

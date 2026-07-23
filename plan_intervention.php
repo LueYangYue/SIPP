@@ -19,6 +19,7 @@ if (!isset($_GET['stud_id']) && !isset($_POST['student'])) {
   $stmt->execute([$_GET['stud_id'], trim($_GET['session'])]);
   $png = $stmt->fetchColumn();
   $stud_id = $_GET['stud_id'];
+  $gp_code = $_GET['gp_code'];
   $session = $_GET['session'];
   echo "<form action=\"plan_intervention.php\" method=\"POST\">\n";
   echo "<div id=\"intervention\" class=\"container-fluid text-center\"><h3>Merancang Intervensi</h3>\n";
@@ -51,6 +52,7 @@ if (!isset($_GET['stud_id']) && !isset($_POST['student'])) {
   echo "<label class=\"text-center\" for=\"guide\">Cadangan</label><br />\n";
   echo "<textarea id=\"guide\" class=\"form-control align-center\" name=\"guide_suggestion\" rows=\"5\" cols=\"50\" \n";
   echo "placeholder=\"Panduan pengajian\" autocomplete=\"on\"></textarea>\n";
+  echo "<br />\n<input type=\"hidden\" name=\"gp_code\" value=\"$gp_code\" readonly=\"readonly\"/>\n</div>\n</div>\n";
   echo "<br />\n<input type=\"hidden\" name=\"plan_filled\" value=\"true\" readonly=\"readonly\"/>\n</div>\n</div>\n";
   echo "<div class=\"col-sm-12 form-group\"><input type=\"submit\" value=\"Merancang\"/></div>\n</div>\n</form>";
   } catch (Exception $e) {
@@ -70,14 +72,14 @@ if (!isset($_GET['stud_id']) && !isset($_POST['student'])) {
   $sql = "INSERT INTO pelan (no, pelajar, pensyarah, prestasi, panduan) VALUES (?, ?, ?, ?, ?)";
   $stmt = $conn->prepare($sql);
   $stmt->execute([$next_r, $_POST['student'], $_POST['lecturer'], $perf, $suggestion]);
-  $gp_code = $_SESSION['gp_code'];
-  $sql = "SELECT `status` FROM prestasi WHERE kod = '$gp_code'";
+  /*$gp_code = $_POST['gp_code'];
+  $sql = "SELECT prestasi.status FROM prestasi WHERE prestasi.kod = '$gp_code'";
   $result = $conn->query($sql);
   $gp_status = $result->fetch();
   $gp_status = substr_replace($gp_status, 'R', 0, 1);
-  $sql = "UPDATE prestasi SET `status` = '$gp_status' WHERE kod = ?";
+  $sql = "UPDATE prestasi SET prestasi.status = '$gp_status' WHERE prestasi.kod = '$gp_code'";
   $stmt = $conn->prepare($sql);
-  $stmt->execute($gp_code);
+  $stmt->execute([$gp_status, $gp_code]);*/
   exit("<script>alert('Rancangan intervensi bagi $perf telah berjaya dihantar.'); document.location = 'dashboard_phead.php';</script>");
   } catch (Exception $e) {
   echo "Error: " . $e->getMessage();
