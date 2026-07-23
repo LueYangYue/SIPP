@@ -6,7 +6,7 @@
         "monolog/monolog": "3.10.*",
         "ext-pdo": "*",
         "ext-pdo_mysql": "*",
-        "laravel/framework": "^12.64"
+        "laravel/framework": "^13.21"
     },
     "authors": [
         {
