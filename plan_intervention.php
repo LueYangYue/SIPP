@@ -72,14 +72,14 @@ if (!isset($_GET['stud_id']) && !isset($_POST['student'])) {
   $sql = "INSERT INTO pelan (no, pelajar, pensyarah, prestasi, panduan) VALUES (?, ?, ?, ?, ?)";
   $stmt = $conn->prepare($sql);
   $stmt->execute([$next_r, $_POST['student'], $_POST['lecturer'], $perf, $suggestion]);
-  /*$gp_code = $_POST['gp_code'];
+  $gp_code = $_POST['gp_code'];
   $sql = "SELECT prestasi.status FROM prestasi WHERE prestasi.kod = '$gp_code'";
   $result = $conn->query($sql);
-  $gp_status = $result->fetch();
+  $gp_status = $result->fetchColumn();
   $gp_status = substr_replace($gp_status, 'R', 0, 1);
-  $sql = "UPDATE prestasi SET prestasi.status = '$gp_status' WHERE prestasi.kod = '$gp_code'";
+  $sql = "UPDATE prestasi SET prestasi.status = ? WHERE prestasi.kod = ?";
   $stmt = $conn->prepare($sql);
-  $stmt->execute([$gp_status, $gp_code]);*/
+  $stmt->execute([$gp_status, $gp_code]);
   exit("<script>alert('Rancangan intervensi bagi $perf telah berjaya dihantar.'); document.location = 'dashboard_phead.php';</script>");
   } catch (Exception $e) {
   echo "Error: " . $e->getMessage();

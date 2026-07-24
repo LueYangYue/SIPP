@@ -18,8 +18,11 @@ try {
   $stmt = $conn->prepare($sql);
   $stmt->execute([$_GET['gp_code']]);
   $gp_status = $stmt->fetchColumn();
-  if (!str_starts_with($gp_status, 'R') && $status === "Selamat") {
-    $sql = "UPDATE prestasi SET prestasi.status = \"P Berisiko\" WHERE prestasi.kod = ?";
+  if (!($gp_status === 'R Berisiko') && $status === "Selamat") {
+    if ($gp_status === 'R Selamat') {
+      $sql = "UPDATE prestasi SET prestasi.status = \"R Berisiko\" WHERE prestasi.kod = ?";} 
+    else {
+      $sql = "UPDATE prestasi SET prestasi.status = \"P Berisiko\" WHERE prestasi.kod = ?";}
     $stmt = $conn->prepare($sql);
     $stmt->execute([$_GET['gp_code']]);}
   $sql = "UPDATE pelajar SET pelajar.status = \"Berisiko\" WHERE pelajar.id = ?";
