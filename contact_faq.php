@@ -103,9 +103,25 @@
 <div class="container-fluid bg-3 text-center" id="where">
   <h3>Di manakah pusat pentadbiran bagi SIPP?</h3>
   <p>Fakulti Teknologi & Sains Maklumat Universiti Kebangsaan Malaysia</p>
-  <a href="#" class="btn btn-default btn-lg">
+  <a href="https://maps.app.goo.gl/9Gg6eJtQ975v3zUB8" class="btn btn-default btn-lg">
     <span class="glyphicon glyphicon-search"></span> Search
   </a>
+  <ul>
+    <li><h4>Apakah nama penuh SIPP?</h4><p>Sistem Intervensi Prestasi Pelajar</p></li>
+    <li><h4>Adakah kelayakan pelajar dan staf akademik diberikan oleh pentadbir SIPP?</h4>
+      <p>
+        Tidak. Pelajar dan staf akademik mendapatkan kelayakan daripada Pusat Pengurusan Akademik UKM.
+        Namun begitu, SIPP boleh membantu pengguna yang telah mendaftar untuk mendapatkan kelayakan yang diperlukan.
+      </p>
+    </li>
+    <li><h4>Bagaimanakah pengguna dapat log masuk dari halaman pendaratan?</h4>
+      <p>
+        Pengguna boleh klik butang log masuk yang berwarna hitam di penjuru kanan atas ataupun mana-mana gambar 
+        pelajar atau pendidik di tengah halaman pendaratan. Bagi langkah-langkah selepas log masuk, pengguna boleh merujuk
+        <a href="https://ukmsipp.me/SIPP/Manual_Pengguna_SIPP.pdf">manual pengguna</a> SIPP.
+      </p>
+    </li>
+  </ul>
 </div>
 
 <div class="container-fluid" style="background-color: #000000" id="contact">
@@ -126,7 +142,9 @@
           <input class="form-control" id="email" name="email" placeholder="Emel" type="email" required>
         </div>
       </div>
-      <textarea class="form-control" id="comment-question" name="question" placeholder="Soalan" rows="5"></textarea><br>
+      <textarea class="form-control" id="comment-question" name="question" placeholder="Soalan" rows="5"></textarea>
+      <br /><label for="user-info">Slip Pendaftaran</label>
+      <input class="form-control" id="user-info" name="user-detail" type="file"><br />
       <div class="row">
         <div class="col-sm-12 form-group">
           <button class="btn btn-default pull-right" type="submit">Hantar</button>
