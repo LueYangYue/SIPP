@@ -179,24 +179,5 @@ $png = "1.32";
 </div>
 <div class="col-sm-12 form-group"><input type="submit" value="Merancang"/></div>
 </div></form>
-<?php 
-/*try {
-$sql = "SELECT MAX(no) AS max_no FROM pelan";
-$result = $conn->query($sql);
-$row = $result->fetch();
-$next_r = $row['max_no'] + 1;
-$sql = "SELECT kod FROM prestasi WHERE kursus = 'PNG' AND pelajar = ? AND sesi = ?";
-$stmt = $conn->prepare($sql);
-$stmt->execute([$_POST['student'], $_POST['session']]);
-$perf = $stmt->fetchColumn();
-$suggestion = $_POST['category'] . "; " . $_POST['guidance'];
-$sql = "INSERT INTO pelan (no, pelajar, pensyarah, prestasi, panduan) VALUES (?, ?, ?, ?, ?)";
-$stmt = $conn->prepare($sql);
-$stmt->execute([$next_r, $_POST['student'], $_SESSION['id'], $perf, $suggestion]);
-//header("Location: analysis_perf.php");
-} catch (Exception $e) {
-echo "Error: " . $e->getMessage();  
-}*/
-?>
 </body>
 </html>
