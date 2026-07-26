@@ -17,7 +17,7 @@
 <div class="container">
   <h1>Welcome to My <b>Student Performance Intervention System</b></h1>
   <h2>Selamat Datang ke <b>SIPP: Sistem Intervensi Prestasi Pelajar</b></h2><br />
-  <img src="https://ukmsipp.me/SIPP/images/university.png" alt="University Logo" style="width: 32px;height: 32px;">
+  <img src="https://ukmsipp.me/SIPP/images/img_hero.png" alt="University Logo" style="width: 32px;height: 32px;">
   <br /><br />Link to <strong>SIPP</strong> <a href="landing.html">landing page</a>
   <br />Pautan <a href="landing.html">halaman pendaratan</a></h2><span class="glyphicon glyphicon-map-marker"></span>
 </div>

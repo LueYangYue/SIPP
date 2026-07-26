@@ -144,7 +144,7 @@
       </div>
       <textarea class="form-control" id="comment-question" name="question" placeholder="Soalan" rows="5"></textarea>
       <br /><label for="user-info">Slip Pendaftaran</label>
-      <input class="form-control" id="user-info" name="user-detail" type="file"><br />
+      <input class="form-control" id="user-info" name="user-detail" type="file" multiple><br />
       <textarea class="form-control" id="comment-question" name="question" placeholder="Soalan" rows="5"></textarea><br>
       <div class="row">
         <div class="col-sm-12 form-group">
@@ -160,6 +160,5 @@
   </a>
   <p>:D Copyright © SIPP 2026</p>
 </footer>
-
 </body>
 </html>
