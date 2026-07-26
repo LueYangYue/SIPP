@@ -25,6 +25,6 @@ try {
 } catch (\PDOException $e) {
     // Hide inner DB details
     http_response_code(500);
-    echo json_encode(["status" => "error", "message" => "Gagal menyambung pangkalan data."])
+    echo json_encode(["status" => "error", "message" => "Gagal menyambung pangkalan data."]);
 }
 ?>
