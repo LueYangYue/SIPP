@@ -4,6 +4,6 @@
 <br />A web-based student performance intervention system
 
 ## Welcome to SIPP &#128511;
-Use the <a href="https://sipp-app-uaf9v.ondigitalocean.app">app &#xf5c4;</a><br /><b>OR</b><br />
-Go to <a href="https://lueyangyue.github.io/SIPP/landing.html">landing page &#xf66f;>></a>
+&#xf5c4; Use the <a href="https://sipp-app-uaf9v.ondigitalocean.app">app</a><br /><b>OR</b><br />
+&#xf66f; Go to <a href="https://lueyangyue.github.io/SIPP/landing.html">landing page>></a>
 <!-- / directory is used for DigitalOcean app, /src directory is used for GitHub Pages -->
