@@ -10,8 +10,9 @@
   <style>
     span {font-size: medium;}
     img {
-      size: xx-large;
-      opacity: 80%;
+      width: 70%;
+      height: 70%;
+      opacity: 70%;
     }
   </style>
 </head>
