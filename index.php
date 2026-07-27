@@ -10,8 +10,8 @@
   <style>
     span {font-size: medium;}
     img {
-      min-height: 765px;
-      min-width: 560px;
+      min-height: 500px;
+      min-width: 750px;
       opacity: 75%;
     }
   </style>
