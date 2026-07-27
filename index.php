@@ -11,8 +11,8 @@
     span {font-size: medium;}
     img {
       min-height: 765px;
-      min-width: 765px;
-      opacity: 70%;
+      min-width: 560px;
+      opacity: 75%;
     }
   </style>
 </head>
