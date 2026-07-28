@@ -5,10 +5,19 @@ $port = $DB_PORT;
 $username = $DB_USER;//Default username is "root"
 $password = $DB_PW;//Default password is ""
 $db = $DB_DATABASE;
+$dsn = "mysql:host=$host;port=$port;$dbname=$db;charset=utf8mb4";
+$options = [
+    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+];
+
+if (getenv('DB_SSL') === 'true') {
+    $options[PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT] = false;
+}
 
 try {
-    $conn = new PDO("mysql:host=$host;port=$port;dbname=$db;charset=utf8mb4", $username, $password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $conn = new PDO($dsn, $username, $password, $options);
+    /*$conn = new PDO("mysql:host=$host;port=$port;dbname=$db;charset=utf8mb4", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);*/
 } catch(PDOException $e) {
     die("Connection failed: " . $e->getMessage());
 }
