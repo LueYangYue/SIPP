@@ -1,6 +1,7 @@
 <?php
 session_start();
-require_once 'database.php';
+//require_once 'database.php';
+require 'api.php';
 
 if (!isset($_SESSION['id']) || $_SESSION['role'] != 2) {
     session_destroy();

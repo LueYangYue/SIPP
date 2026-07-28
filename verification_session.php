@@ -1,6 +1,7 @@
 <?php
 session_start();// Start session
-require_once 'database.php';
+//require_once 'database.php';
+require 'api.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   if (!isset($_SESSION['no'])) {$_SESSION['no'] = 0;}

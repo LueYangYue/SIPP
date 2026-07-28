@@ -1,5 +1,4 @@
 /vendor/
-/api.php
 /.env.example
 /.env
 /.sql

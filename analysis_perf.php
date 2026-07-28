@@ -1,6 +1,7 @@
 <?php
 session_start();
-require_once 'database.php';
+//require_once 'database.php';
+require 'api.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id'])) {
   if (!isset($_SESSION['id']) || ($_SESSION['role'] != 1 && $_SESSION['role'] != 2)) {
