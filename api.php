@@ -8,7 +8,7 @@ header("Access-Control-Allow-Methods: GET, POST");
 $host = "db-pgsql-nyc1-13324-do-user-39786782-0.l.db.ondigitalocean.com";//Default host is  "localhost"
 $port = 25060;
 $username = sippadmin;//Default username is "root"
-$password = getenv('DB_PW');//Default password is ""
+$password = getenv('DATABASE_PW');//Default password is ""
 $db = sippdb;
 $ca = "/var/www/cert/ca-certificate.crt";
 

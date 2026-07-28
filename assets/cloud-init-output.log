@@ -1,0 +1,303 @@
+Cloud-init v. 26.1-0ubuntu1~24.04.1 running 'init-local' at Wed, 15 Jul 2026 13:49:37 +0000. Up 8.71 seconds.
+Cloud-init v. 26.1-0ubuntu1~24.04.1 running 'init' at Wed, 15 Jul 2026 13:49:41 +0000. Up 12.38 seconds.
+ci-info: +++++++++++++++++++++++++++++++++++++++++Net device info++++++++++++++++++++++++++++++++++++++++++
+ci-info: +--------+------+-----------------------------------+---------------+--------+-------------------+
+ci-info: | Device |  Up  |              Address              |      Mask     | Scope  |     Hw-Address    |
+ci-info: +--------+------+-----------------------------------+---------------+--------+-------------------+
+ci-info: |  eth0  | True |           157.230.210.16          | 255.255.240.0 | global | d2:6c:ba:09:4f:f4 |
+ci-info: |  eth0  | True |             10.10.0.6             |  255.255.0.0  | global | d2:6c:ba:09:4f:f4 |
+ci-info: |  eth0  | True | 2604:a880:400:d1:0:4:b6ba:3001/64 |       .       | global | d2:6c:ba:09:4f:f4 |
+ci-info: |  eth0  | True |    fe80::d06c:baff:fe09:4ff4/64   |       .       |  link  | d2:6c:ba:09:4f:f4 |
+ci-info: |  eth1  | True |             10.116.0.3            | 255.255.240.0 | global | 5a:ce:03:16:0e:67 |
+ci-info: |  eth1  | True |     fe80::58ce:3ff:fe16:e67/64    |       .       |  link  | 5a:ce:03:16:0e:67 |
+ci-info: |   lo   | True |             127.0.0.1             |   255.0.0.0   |  host  |         .         |
+ci-info: |   lo   | True |              ::1/128              |       .       |  host  |         .         |
+ci-info: +--------+------+-----------------------------------+---------------+--------+-------------------+
+ci-info: +++++++++++++++++++++++++++++++Route IPv4 info+++++++++++++++++++++++++++++++
+ci-info: +-------+---------------+---------------+---------------+-----------+-------+
+ci-info: | Route |  Destination  |    Gateway    |    Genmask    | Interface | Flags |
+ci-info: +-------+---------------+---------------+---------------+-----------+-------+
+ci-info: |   0   |    0.0.0.0    | 157.230.208.1 |    0.0.0.0    |    eth0   |   UG  |
+ci-info: |   1   |   10.10.0.0   |    0.0.0.0    |  255.255.0.0  |    eth0   |   U   |
+ci-info: |   2   |   10.116.0.0  |    0.0.0.0    | 255.255.240.0 |    eth1   |   U   |
+ci-info: |   3   | 157.230.208.0 |    0.0.0.0    | 255.255.240.0 |    eth0   |   U   |
+ci-info: +-------+---------------+---------------+---------------+-----------+-------+
+ci-info: ++++++++++++++++++++++++++++++Route IPv6 info++++++++++++++++++++++++++++++
+ci-info: +-------+-----------------------+---------------------+-----------+-------+
+ci-info: | Route |      Destination      |       Gateway       | Interface | Flags |
+ci-info: +-------+-----------------------+---------------------+-----------+-------+
+ci-info: |   0   | 2604:a880:400:d1::/64 |          ::         |    eth0   |   U   |
+ci-info: |   1   |       fe80::/64       |          ::         |    eth0   |   U   |
+ci-info: |   2   |       fe80::/64       |          ::         |    eth1   |   U   |
+ci-info: |   3   |          ::/0         | 2604:a880:400:d1::1 |    eth0   |   UG  |
+ci-info: |   5   |         local         |          ::         |    eth0   |   U   |
+ci-info: |   6   |         local         |          ::         |    eth1   |   U   |
+ci-info: |   7   |         local         |          ::         |    eth0   |   U   |
+ci-info: |   8   |       multicast       |          ::         |    eth0   |   U   |
+ci-info: |   9   |       multicast       |          ::         |    eth1   |   U   |
+ci-info: +-------+-----------------------+---------------------+-----------+-------+
++ cloud-init-per instance do-resolved-conf /bin/false
++ [ -f /etc/systemd/resolved.conf ]
++ logger -t DigitalOcean writing resolvers  to /etc/systemd/resolved.conf.d/DigitalOcean.conf
++ mkdir -p /etc/systemd/resolved.conf.d
++ printf [Resolve]\nDNS=67.207.67.3 67.207.67.2\n
++ systemctl try-reload-or-restart systemd-resolved
++ logger -t DigitalOcean adding random seed to /dev/urandom
++ base64 -d
+Generating public/private rsa key pair.
+Your identification has been saved in /etc/ssh/ssh_host_rsa_key
+Your public key has been saved in /etc/ssh/ssh_host_rsa_key.pub
+The key fingerprint is:
+SHA256:ifsDzLhdw5O4Mk8gjKQ/g/CtLOgZRc0PU5U5eER+Lk8 root@s2-ubuntu
+The key's randomart image is:
++---[RSA 3072]----+
+|       .=+o      |
+|    o ...=       |
+| . . =  ....     |
+|oo.   +. .o      |
+|+ o..+.+So E     |
+|.+.o..=.* +      |
+|o.= .oo+ o .     |
+|o.o++.o..        |
+|.+o  +. ..       |
++----[SHA256]-----+
+Generating public/private ecdsa key pair.
+Your identification has been saved in /etc/ssh/ssh_host_ecdsa_key
+Your public key has been saved in /etc/ssh/ssh_host_ecdsa_key.pub
+The key fingerprint is:
+SHA256:rLLhieBydO79syG5usfa2rHB3QRFwcUMnFJaRwl1ewU root@s2-ubuntu
+The key's randomart image is:
++---[ECDSA 256]---+
+|         =O@=.E..|
+|        .++.+. ..|
+|        o.    . .|
+|       . .     . |
+|        S .      |
+|  . .. + o       |
+|.. oo.B o .      |
+|o..o.Oo*..       |
+|.o..X**.oo       |
++----[SHA256]-----+
+Generating public/private ed25519 key pair.
+Your identification has been saved in /etc/ssh/ssh_host_ed25519_key
+Your public key has been saved in /etc/ssh/ssh_host_ed25519_key.pub
+The key fingerprint is:
+SHA256:EPZy9vuNUAk1IVEucd4sX3wDH3tQNlg3rWDEbgZDRXY root@s2-ubuntu
+The key's randomart image is:
++--[ED25519 256]--+
+|      o  .=B@oE*=|
+|     . o  oO+*o+B|
+|      o + o=+.o==|
+|       = . o++..+|
+|        S .oo .  |
+|           o     |
+|          o      |
+|           o o   |
+|            o .  |
++----[SHA256]-----+
+Cloud-init v. 26.1-0ubuntu1~24.04.1 running 'modules:config' at Wed, 15 Jul 2026 13:49:47 +0000. Up 17.88 seconds.
+Cloud-init v. 26.1-0ubuntu1~24.04.1 running 'modules:final' at Wed, 15 Jul 2026 13:49:48 +0000. Up 19.32 seconds.
+Created symlink /etc/systemd/system/multi-user.target.wants/vpc-peering.service → /etc/systemd/system/vpc-peering.service.
+Cleaning up old sources...OK
+Verifying machine compatibility...OK
+Verifying compatibility with script...OK
+Installing apt repository...
+Preconfiguring packages ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 75072 files and directories currently installed.)
+Preparing to unpack .../0-ca-certificates_20260601~24.04.1_all.deb ...
+Unpacking ca-certificates (20260601~24.04.1) over (20240203) ...
+Selecting previously unselected package apt-transport-https.
+Preparing to unpack .../1-apt-transport-https_2.8.3_all.deb ...
+Unpacking apt-transport-https (2.8.3) ...
+Preparing to unpack .../2-curl_8.5.0-2ubuntu10.11_amd64.deb ...
+Unpacking curl (8.5.0-2ubuntu10.11) over (8.5.0-2ubuntu10.9) ...
+Preparing to unpack .../3-libcurl4t64_8.5.0-2ubuntu10.11_amd64.deb ...
+Unpacking libcurl4t64:amd64 (8.5.0-2ubuntu10.11) over (8.5.0-2ubuntu10.9) ...
+Preparing to unpack .../4-libcurl3t64-gnutls_8.5.0-2ubuntu10.11_amd64.deb ...
+Unpacking libcurl3t64-gnutls:amd64 (8.5.0-2ubuntu10.11) over (8.5.0-2ubuntu10.9) ...
+Selecting previously unselected package gnupg2.
+Preparing to unpack .../5-gnupg2_2.4.4-2ubuntu17.4_all.deb ...
+Unpacking gnupg2 (2.4.4-2ubuntu17.4) ...
+Setting up gnupg2 (2.4.4-2ubuntu17.4) ...
+Setting up apt-transport-https (2.8.3) ...
+Setting up libcurl4t64:amd64 (8.5.0-2ubuntu10.11) ...
+Setting up libcurl3t64-gnutls:amd64 (8.5.0-2ubuntu10.11) ...
+Setting up ca-certificates (20260601~24.04.1) ...
+Updating certificates in /etc/ssl/certs...
+rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+14 added, 39 removed; done.
+Setting up curl (8.5.0-2ubuntu10.11) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+Processing triggers for libc-bin (2.39-0ubuntu8.7) ...
+Processing triggers for ca-certificates (20260601~24.04.1) ...
+Updating certificates in /etc/ssl/certs...
+0 added, 0 removed; done.
+Running hooks in /etc/ca-certificates/update.d...
+done.
+
+Running kernel seems to be up-to-date.
+
+Restarting services...
+ systemctl restart packagekit.service
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+Installing gpg key...Selecting previously unselected package do-agent.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 75057 files and directories currently installed.)
+Preparing to unpack .../do-agent_3.18.14_amd64.deb ...
+Unpacking do-agent (3.18.14) ...
+Setting up do-agent (3.18.14) ...
+Detecting SELinux
+SELinux not enforced
+enable systemd service
+Created symlink /etc/systemd/system/multi-user.target.wants/do-agent.service → /etc/systemd/system/do-agent.service.
+
+Running kernel seems to be up-to-date.
+
+No services need to be restarted.
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+/usr/bin/wget
+--2026-07-15 13:50:45--  https://repos-droplet.digitalocean.com/install.sh
+Resolving repos-droplet.digitalocean.com (repos-droplet.digitalocean.com)... 2606:4700::6813:ad44, 2606:4700::6813:ae44, 104.19.174.68, ...
+Connecting to repos-droplet.digitalocean.com (repos-droplet.digitalocean.com)|2606:4700::6813:ad44|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 8105 (7.9K) [application/x-sh]
+Saving to: ‘/var/lib/cloud/instance/sem/dotty_agent’
+
+     0K .......                                               100% 35.0M=0s
+
+2026-07-15 13:50:45 (35.0 MB/s) - ‘/var/lib/cloud/instance/sem/dotty_agent’ saved [8105/8105]
+
+Verifying machine compatibility...
+OK
+Verifying compatibility with script...
+OK
+Checking architecture support...
+OK
+Installing Droplet Agent, 1 attempt
+Setting up droplet-agent apt repository...
+Checking dependencies for installing droplet-agent
+Importing GPG public key
+Installing droplet-agent
+Selecting previously unselected package droplet-agent.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 75070 files and directories currently installed.)
+Preparing to unpack .../droplet-agent_1.4.0_amd64.deb ...
+Unpacking droplet-agent (1.4.0) ...
+Selecting previously unselected package droplet-agent-keyring.
+Preparing to unpack .../droplet-agent-keyring_2.0.0_amd64.deb ...
+Unpacking droplet-agent-keyring (2.0.0) ...
+Setting up droplet-agent (1.4.0) ...
+enable systemd service
+Created symlink /etc/systemd/system/multi-user.target.wants/droplet-agent.service → /etc/systemd/system/droplet-agent.service.
+Created symlink /etc/systemd/system/timers.target.wants/droplet-agent-update.timer → /etc/systemd/system/droplet-agent-update.timer.
+Setting up droplet-agent-keyring (2.0.0) ...
+
+Running kernel seems to be up-to-date.
+
+No services need to be restarted.
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+DigitalOcean Droplet Agent is successfully installed
+Cloud-init v. 26.1-0ubuntu1~24.04.1 finished at Wed, 15 Jul 2026 13:50:57 +0000. Datasource DataSourceConfigDrive [net,ver=2][source=/dev/vdb].  Up 88.52 seconds
+Cloud-init v. 26.1-0ubuntu1~24.04.1 running 'init-local' at Wed, 15 Jul 2026 23:24:15 +0000. Up 6.70 seconds.
+Cloud-init v. 26.1-0ubuntu1~24.04.1 running 'init' at Wed, 15 Jul 2026 23:24:17 +0000. Up 9.33 seconds.
+ci-info: +++++++++++++++++++++++++++++++++++++++++Net device info++++++++++++++++++++++++++++++++++++++++++
+ci-info: +--------+------+-----------------------------------+---------------+--------+-------------------+
+ci-info: | Device |  Up  |              Address              |      Mask     | Scope  |     Hw-Address    |
+ci-info: +--------+------+-----------------------------------+---------------+--------+-------------------+
+ci-info: |  eth0  | True |           157.230.210.16          | 255.255.240.0 | global | d2:6c:ba:09:4f:f4 |
+ci-info: |  eth0  | True |             10.10.0.6             |  255.255.0.0  | global | d2:6c:ba:09:4f:f4 |
+ci-info: |  eth0  | True | 2604:a880:400:d1:0:4:b6ba:3001/64 |       .       | global | d2:6c:ba:09:4f:f4 |
+ci-info: |  eth0  | True |    fe80::d06c:baff:fe09:4ff4/64   |       .       |  link  | d2:6c:ba:09:4f:f4 |
+ci-info: |  eth1  | True |             10.116.0.3            | 255.255.240.0 | global | 5a:ce:03:16:0e:67 |
+ci-info: |  eth1  | True |     fe80::58ce:3ff:fe16:e67/64    |       .       |  link  | 5a:ce:03:16:0e:67 |
+ci-info: |   lo   | True |             127.0.0.1             |   255.0.0.0   |  host  |         .         |
+ci-info: |   lo   | True |              ::1/128              |       .       |  host  |         .         |
+ci-info: +--------+------+-----------------------------------+---------------+--------+-------------------+
+ci-info: +++++++++++++++++++++++++++++++Route IPv4 info+++++++++++++++++++++++++++++++
+ci-info: +-------+---------------+---------------+---------------+-----------+-------+
+ci-info: | Route |  Destination  |    Gateway    |    Genmask    | Interface | Flags |
+ci-info: +-------+---------------+---------------+---------------+-----------+-------+
+ci-info: |   0   |    0.0.0.0    | 157.230.208.1 |    0.0.0.0    |    eth0   |   UG  |
+ci-info: |   1   |   10.10.0.0   |    0.0.0.0    |  255.255.0.0  |    eth0   |   U   |
+ci-info: |   2   |   10.116.0.0  |    0.0.0.0    | 255.255.240.0 |    eth1   |   U   |
+ci-info: |   3   | 157.230.208.0 |    0.0.0.0    | 255.255.240.0 |    eth0   |   U   |
+ci-info: +-------+---------------+---------------+---------------+-----------+-------+
+ci-info: ++++++++++++++++++++++++++++++Route IPv6 info++++++++++++++++++++++++++++++
+ci-info: +-------+-----------------------+---------------------+-----------+-------+
+ci-info: | Route |      Destination      |       Gateway       | Interface | Flags |
+ci-info: +-------+-----------------------+---------------------+-----------+-------+
+ci-info: |   0   | 2604:a880:400:d1::/64 |          ::         |    eth0   |   U   |
+ci-info: |   1   |       fe80::/64       |          ::         |    eth0   |   U   |
+ci-info: |   2   |       fe80::/64       |          ::         |    eth1   |   U   |
+ci-info: |   3   |          ::/0         | 2604:a880:400:d1::1 |    eth0   |   UG  |
+ci-info: |   5   |         local         |          ::         |    eth0   |   U   |
+ci-info: |   6   |         local         |          ::         |    eth1   |   U   |
+ci-info: |   7   |         local         |          ::         |    eth0   |   U   |
+ci-info: |   8   |       multicast       |          ::         |    eth0   |   U   |
+ci-info: |   9   |       multicast       |          ::         |    eth1   |   U   |
+ci-info: +-------+-----------------------+---------------------+-----------+-------+
++ cloud-init-per instance do-resolved-conf /bin/false
++ exit 0
++ logger -t DigitalOcean adding random seed to /dev/urandom
++ base64 -d
+Cloud-init v. 26.1-0ubuntu1~24.04.1 running 'modules:config' at Wed, 15 Jul 2026 23:24:22 +0000. Up 13.78 seconds.
+Cloud-init v. 26.1-0ubuntu1~24.04.1 running 'modules:final' at Wed, 15 Jul 2026 23:24:23 +0000. Up 14.68 seconds.
+Cloud-init v. 26.1-0ubuntu1~24.04.1 finished at Wed, 15 Jul 2026 23:24:23 +0000. Datasource DataSourceConfigDrive [net,ver=2][source=/dev/vdb].  Up 14.83 seconds
+Cloud-init v. 26.1-0ubuntu1~24.04.1 running 'init-local' at Thu, 16 Jul 2026 09:49:32 +0000. Up 94.92 seconds.
+Cloud-init v. 26.1-0ubuntu1~24.04.1 running 'init' at Thu, 16 Jul 2026 09:49:34 +0000. Up 97.13 seconds.
+ci-info: +++++++++++++++++++++++++++++++++++++++++Net device info++++++++++++++++++++++++++++++++++++++++++
+ci-info: +--------+------+-----------------------------------+---------------+--------+-------------------+
+ci-info: | Device |  Up  |              Address              |      Mask     | Scope  |     Hw-Address    |
+ci-info: +--------+------+-----------------------------------+---------------+--------+-------------------+
+ci-info: |  eth0  | True |           157.230.210.16          | 255.255.240.0 | global | d2:6c:ba:09:4f:f4 |
+ci-info: |  eth0  | True |             10.10.0.6             |  255.255.0.0  | global | d2:6c:ba:09:4f:f4 |
+ci-info: |  eth0  | True | 2604:a880:400:d1:0:4:b6ba:3001/64 |       .       | global | d2:6c:ba:09:4f:f4 |
+ci-info: |  eth0  | True |    fe80::d06c:baff:fe09:4ff4/64   |       .       |  link  | d2:6c:ba:09:4f:f4 |
+ci-info: |  eth1  | True |             10.116.0.3            | 255.255.240.0 | global | 5a:ce:03:16:0e:67 |
+ci-info: |  eth1  | True |     fe80::58ce:3ff:fe16:e67/64    |       .       |  link  | 5a:ce:03:16:0e:67 |
+ci-info: |   lo   | True |             127.0.0.1             |   255.0.0.0   |  host  |         .         |
+ci-info: |   lo   | True |              ::1/128              |       .       |  host  |         .         |
+ci-info: +--------+------+-----------------------------------+---------------+--------+-------------------+
+ci-info: +++++++++++++++++++++++++++++++Route IPv4 info+++++++++++++++++++++++++++++++
+ci-info: +-------+---------------+---------------+---------------+-----------+-------+
+ci-info: | Route |  Destination  |    Gateway    |    Genmask    | Interface | Flags |
+ci-info: +-------+---------------+---------------+---------------+-----------+-------+
+ci-info: |   0   |    0.0.0.0    | 157.230.208.1 |    0.0.0.0    |    eth0   |   UG  |
+ci-info: |   1   |   10.10.0.0   |    0.0.0.0    |  255.255.0.0  |    eth0   |   U   |
+ci-info: |   2   |   10.116.0.0  |    0.0.0.0    | 255.255.240.0 |    eth1   |   U   |
+ci-info: |   3   | 157.230.208.0 |    0.0.0.0    | 255.255.240.0 |    eth0   |   U   |
+ci-info: +-------+---------------+---------------+---------------+-----------+-------+
+ci-info: ++++++++++++++++++++++++++++++Route IPv6 info++++++++++++++++++++++++++++++
+ci-info: +-------+-----------------------+---------------------+-----------+-------+
+ci-info: | Route |      Destination      |       Gateway       | Interface | Flags |
+ci-info: +-------+-----------------------+---------------------+-----------+-------+
+ci-info: |   0   | 2604:a880:400:d1::/64 |          ::         |    eth0   |   U   |
+ci-info: |   1   |       fe80::/64       |          ::         |    eth0   |   U   |
+ci-info: |   2   |       fe80::/64       |          ::         |    eth1   |   U   |
+ci-info: |   3   |          ::/0         | 2604:a880:400:d1::1 |    eth0   |   UG  |
+ci-info: |   5   |         local         |          ::         |    eth0   |   U   |
+ci-info: |   6   |         local         |          ::         |    eth1   |   U   |
+ci-info: |   7   |         local         |          ::         |    eth0   |   U   |
+ci-info: |   8   |       multicast       |          ::         |    eth0   |   U   |
+ci-info: |   9   |       multicast       |          ::         |    eth1   |   U   |
+ci-info: +-------+-----------------------+---------------------+-----------+-------+
++ cloud-init-per instance do-resolved-conf /bin/false
++ exit 0
++ logger -t DigitalOcean adding random seed to /dev/urandom
++ base64 -d
+Cloud-init v. 26.1-0ubuntu1~24.04.1 running 'modules:config' at Thu, 16 Jul 2026 09:49:38 +0000. Up 100.84 seconds.
+Cloud-init v. 26.1-0ubuntu1~24.04.1 running 'modules:final' at Thu, 16 Jul 2026 09:49:39 +0000. Up 101.67 seconds.
+Cloud-init v. 26.1-0ubuntu1~24.04.1 finished at Thu, 16 Jul 2026 09:49:39 +0000. Datasource DataSourceConfigDrive [net,ver=2][source=/dev/vdb].  Up 101.78 seconds
