@@ -1,10 +1,10 @@
 <?php
 //Open a database connection with PDO
-$host = getenv('DB_HOST');//Default host is  "localhost"
-$port = getenv('DB_PORT');
-$username = getenv('DB_USER');//Default username is "root"
-$password = getenv('DB_PW');//Default password is ""
-$db = getenv('DB_DATABASE');
+$host = $DB_HOST;//Default host is  "localhost"
+$port = $DB_PORT;
+$username = $DB_USER;//Default username is "root"
+$password = $DB_PW;//Default password is ""
+$db = $DB_DATABASE;
 
 try {
     $conn = new PDO("mysql:host=$host;port=$port;dbname=$db;charset=utf8mb4", $username, $password);

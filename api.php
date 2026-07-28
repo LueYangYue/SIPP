@@ -4,7 +4,7 @@ header("Access-Control-Allow-Origin: https://lueyangyue.github.io");
 header("Content-Type: application/json; charset=UTF-8");
 header("Access-Control-Allow-Methods: GET, POST");
 
-// Connect database from DigitalOcean 
+// Connect database from DigitalOcean, console echo $DATABASE 
 $dbURL = getenv('DATABASE_URL');
 $dbopts = parse_url($dbURL);
 $host = $dbopts['host'];//Default host is  "localhost"
@@ -28,6 +28,5 @@ try {
     // Hide inner DB details
     http_response_code(500);
     echo json_encode(["status" => "error", "message" => "Gagal menyambung pangkalan data."]);
-    echo "<script>console.log('Gagal menyambung pangkalan data');</script>";
 }
 ?>
