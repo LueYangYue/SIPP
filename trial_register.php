@@ -164,7 +164,7 @@ $_SESSION['stud_year']= 3;
 </head>
 <body>
 <div class="navbar text-center">
-  <a class="logo" href="https://ukmsipp.me/SIPP/src/landing.html">
+  <a class="logo" href="https://ukmsipp.me/SIPP/landing.html">
     <img src="https://ukmsipp.me/SIPP/images/university.png" alt="University Logo" style="width: 32px; height: 32px;">
   </a>
   <h1>Pendaftaran Percubaan</h1>
