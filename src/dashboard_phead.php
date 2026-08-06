@@ -1,15 +1,14 @@
 <?php
 session_start();
 require_once 'database.php';
-//require 'api.php';
 
-if (!isset($_SESSION['id']) || $_SESSION['role'] != 2) {
+if (!isset($_SESSION['id']) || $_SESSION['role'] != 1) {
     session_destroy();
     header("Location: login.html");
     exit();
 }
 
-function categorize ($suggestion) {
+function categorize ($suggestion){
   $suggestion = explode("; ", $suggestion);
   $category = $suggestion[0];
   switch ($category) {
@@ -33,11 +32,11 @@ function categorize ($suggestion) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Papan Pemuka</title>
-  <link rel="icon" type="image/x-icon" href="https://ukmsipp.me/SIPP/images/university.png">
-  <link rel="stylesheet" href="https://ukmsipp.me/SIPP/assets/css/styles.css">
+  <link rel="icon" type="image/x-icon" href="images/university.png">
+  <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <script src="https://ukmsipp.me/SIPP/assets/js/visualize_perf.js"></script>
-  <script src="https://ukmsipp.me/SIPP/assets/js/intervene_perf.js"></script>
+  <script src="visualize_perf.js"></script>
+  <script src="intervene_perf.js"></script>
   <style>
     :root {
       --blue-one: #0044ba;
@@ -70,7 +69,7 @@ function categorize ($suggestion) {
 </head>
 <body>
   <a class="home-logo" href="landing.html">
-    <img src="https://ukmsipp.me/SIPP/images/university.png" alt="University Logo" style="width: 32px;height: 32px;">
+    <img src="images/university.png" alt="University Logo" style="width: 32px;height: 32px;">
   </a>
   <aside class="sidebar">
     <div class="aside-links">
@@ -81,7 +80,7 @@ function categorize ($suggestion) {
     </div>
   </aside>
   <div class="navbar">
-    <h1>Pensyarah</h1>
+    <h1>Ketua Program</h1>
     <nav class="navbar-menu">
       <button onclick="document.location='logout.php'">Log Keluar</button>
     </nav>
@@ -96,16 +95,16 @@ function categorize ($suggestion) {
       $stmt->bindParam(':id', $_SESSION['id']);
       $stmt->execute();
       if ($stmt->rowCount() > 0) {
-        echo "<table>\n<caption>Penilaian Terlibat Kini</caption>\n";
+        echo "<table>\n<caption>Penilaian terlibat kini</caption>\n";
         echo "<thead>\n<tr>\n";
         echo "<th>Kod</th>\n<th>Nama</th>\n";
         echo "</tr>\n</thead>\n";
         echo "<tbody>\n";
         while($row = $stmt->fetch()) {
-            echo "<tr>\n";
-            echo "<td>" . $row['kod'] . "</td>\n";
-            echo "<td>" . $row['nama'] . "</td>\n";
-            echo "</tr>\n";
+          echo "<tr>\n";
+          echo "<td>" . $row['kod'] . "</td>\n";
+          echo "<td>" . $row['nama'] . "</td>\n";
+          echo "</tr>\n";
         }
         echo "</tbody>\n</table>";
       } else {
@@ -137,10 +136,10 @@ function categorize ($suggestion) {
   </section>
   <section id="alerts-section"><h2>Peringatan</h2>
     <div>
-    <?php 
+    <?php
     try {
-      $sql1 = "SELECT e.no AS n, r.kod AS k, r.pelajar AS p, e.masa AS m FROM peringatan AS e, prestasi AS r ";
-      $sql2 = "WHERE e.prestasi = r.kod AND r.kursus = 'PNG' AND r.sesi = :sesi ORDER BY e.no ASC";
+      $sql1 = "SELECT e.no AS n, r.kod AS k, r.pelajar AS p, e.masa AS m FROM peringatan AS e, ";
+      $sql2 = "prestasi AS r WHERE e.prestasi = r.kod AND r.kursus = 'PNG' AND r.sesi = :sesi ORDER BY e.no ASC";
       $stmt1 = $conn->prepare($sql1 . $sql2);
       $stmt1->bindParam(':sesi', $_SESSION['acad_session']);
       $stmt1->execute();
@@ -176,31 +175,25 @@ function categorize ($suggestion) {
   </section>
   <section id="plans-section"><h2>Pelan</h2>
     <div>
-    <?php 
+    <?php
     try {
-      $sql1 = "SELECT pelan.pelajar, pelan.panduan AS p, prestasi.kod AS k, prestasi.sesi AS s FROM pelan, prestasi ";
-      $sql2 = "WHERE prestasi.kod = pelan.prestasi AND pelan.pensyarah = :id ORDER BY pelan.no ASC";
-      $stmt = $conn->prepare($sql1 . $sql2);
-      $stmt->bindParam(':id', $_SESSION['id']);
+      $sql = "SELECT * FROM pelan JOIN prestasi ON prestasi.kod = pelan.prestasi ORDER BY pelan.no ASC";
+      $stmt = $conn->prepare($sql);
       $stmt->execute();
       if ($stmt->rowCount() > 0) {
-        echo "<table>\n<caption>Rancangan intervensi prestasi</caption>\n";
+        echo "<table>\n<caption>Perancangan intervensi prestasi</caption>\n";
         echo "<thead>\n<tr>\n";
-        echo "<th>Prestasi</th>\n<th>Semester/Sesi</th>\n<th>Pelajar</th>\n<th>Nama Pelajar</th>\n<th>Panduan</th>\n";
+        echo "<th>No.</th>\n<th>Prestasi</th>\n<th>Pensyarah</th>\n<th>Pelajar</th>\n<th>Panduan</th>\n";
         echo "</tr>\n</thead>\n";
         echo "<tbody>\n";
         while($row = $stmt->fetch()) {
-          $stud_id = $row['pelajar'];
-          $sql3 = "SELECT nama FROM pengguna where pengguna.id = '$stud_id'";
-          $result = $conn->query($sql3);
-          $student = $result->fetch();
-          echo "<tr>\n";
-          echo "<td>" . $row['k'] . "</td>\n";
-          echo "<td>" . $row['s'] . "</td>\n";
-          echo "<td>" . $stud_id . "</td>\n";
-          echo "<td>" . $student['nama'] . "</td>\n";
-          echo "<td>" . categorize($row['p']) . "</td>\n";
-          echo "</tr>\n";
+            echo "<tr>\n";
+            echo "<td>" . $row['no'] . "</td>\n";
+            echo "<td>" . $row['prestasi'] . "</td>\n";
+            echo "<td>" . $row['pensyarah'] . "</td>\n";
+            echo "<td>" . $row['pelajar'] . "</td>\n";
+            echo "<td>" . categorize($row['panduan']) . "</td>\n";
+            echo "</tr>\n";
         }
         echo "</tbody>\n</table>";
       } else {
