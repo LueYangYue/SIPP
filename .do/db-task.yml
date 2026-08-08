@@ -1,0 +1,39 @@
+# name: Database Operation Pipeline
+
+# on: 
+#   push:
+#     branches: [ main ]
+
+# jobs:
+#   database-task:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       # 1. Pull the codebase into the runner
+#       - name: Checkout code
+#         uses: actions/checkout@v4
+
+#       # 2. Add the dynamic runner IP to DigitalOcean firewall
+#       - name: Add Runner IP to Trusted Sources
+#         id: whitelist_ip
+#         uses: GarreauArthur/manage-digital-ocean-managed-database-trusted-sources-gh-action@main
+#         with:
+#           action: "add"
+#           database_id: ${{ secrets.DO_DB_CLUSTER_ID }}
+#           digitalocean_token: ${{ secrets.DO_API_TOKEN }}
+
+#       # 3. Run your database migrations/scripts
+#       - name: Execute Database Operations
+#         run: |
+#           echo "Connecting to the database..."
+#           # Insert your PHP migration script, node seed, or direct mysql CLI query here
+#           # Example: mysql -h ${{ secrets.DB_HOST }} -u sippadmin -p ${{ secrets.DB_PASS }} < schema.sql
+
+#       # 4. Clean up: ALWAYS remove the IP address even if previous steps fail
+#       - name: Remove Runner IP from Trusted Sources
+#         if: always()
+#         uses: GarreauArthur/manage-digital-ocean-managed-database-trusted-sources-gh-action@main
+#         with:
+#           action: "remove"
+#           database_id: ${{ secrets.DO_DB_CLUSTER_ID }}
+#           digitalocean_token: ${{ secrets.DO_API_TOKEN }}
