@@ -1,5 +1,5 @@
 <?php
-require_once 'api.php';
+//require_once 'api.php';
 //Open a database connection with PDO
 $servername = "localhost";//"localhost" or "lrgs.ftsm.ukm.my"
 $username = "root";//Default username is "root", lrgs is "A202211"
