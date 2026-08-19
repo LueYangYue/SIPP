@@ -176,7 +176,7 @@ $_SESSION['stud_year']= 3;
   <div class="row"><canvas id="pngChart"></canvas></div>
   <script>visualizePNG();</script>
 </div>
-<form>
+<form method="POST" action="register_tester.php">
 <div class="container-fluid">
   <div class="container-fluid text-center">
     <div class="row">
@@ -228,9 +228,17 @@ $_SESSION['stud_year']= 3;
       placeholder="Pengenalan" autocomplete="on"></textarea>
       <br /><input type="hidden" name="intro_filled" value="true" readonly="readonly"/>
     </div>
-  </div>
+  </div><script src="https://cdn.jsdelivr.net/npm/bcryptjs@2.4.3/dist/bcrypt.min.js"></script>
   <div class="col-sm-12 form-group"><input type="submit" value="Daftar"/></div>
 </div>
 </form>
 </body>
 </html>
+<script>
+  const bcrypt = require('bcrypt');
+  async function registerUser(password) {
+    const saltRounds = 10;
+    const hashedPassword = await bcrypt.hash(password, saltRounds);
+    return hashedPassword;
+  }
+</script>
