@@ -1,12 +1,22 @@
 <?php
 require_once 'database.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['pw'] === $_POST['vpw']) {
+  $conn->begin_transaction();
 try {
-  //Register tester
+  // Prevent concurrent inserts using same ID by locking the table
+  $sql = "LOCK TABLES pengguna WRITE, pelajar WRITE";
+  $conn->query($sql); // Lock tables with exec($sql) if using PDO
   $sql = "SELECT MAX(id) AS max_no FROM pengguna WHERE id LIKE 'T%'";
   $result = $conn->query($sql);
-  $row = $result->fetch();
-  $next_r = $row['max_no'] + 1;
+  $last_tester = $result->fetch();
+  $next_r = $last_tester['max_no'] + 1;
+  /*
+  if ($last_tester && preg_match('/^T(\d+)$/', $last_tester, $matches)) {
+    $next_r = 'T' . str_pad($matches[1] + 1, 6, '0', STR_PAD_LEFT);
+  } else {
+    $next_r = 'T000001';
+  }
+  */
   $role = $_POST['role'];
   $id = $_POST['id'];
   $pw = $_POST['pw'];
@@ -15,7 +25,7 @@ try {
   $sql = "INSERT INTO pengguna (id, kataLaluan, nama, sesi, peranan) VALUES ($id, $pw, $name, $sesi, $role)";
   $stmt = $conn->prepare($sql);
   $stmt->execute();
-  switch ($role) {
+  /*switch ($role) {
     case 1:
       $sql = "INSERT INTO pensyarah VALUES ($id)";
       $stmt = $conn->prepare($sql1);
@@ -36,8 +46,8 @@ try {
       $stmt = $conn->prepare($sql);
       $stmt->execute();
       break;
-  }
-function categorize ($suggestion){
+  }*/
+function validateForm($suggestion){
   $suggestion = explode("; ", $suggestion);
 
 
