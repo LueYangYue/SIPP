@@ -19,12 +19,14 @@ try {
   */
   $role = $_POST['role'];
   $id = $_POST['id'];
-  $pw = $_POST['pw'];
+  $pw = password_hash($_POST['pw'], PASSWORD_DEFAULT);
   $name = $_POST['name'];
   $sesi = "2/20252026";
   $sql = "INSERT INTO pengguna (id, kataLaluan, nama, sesi, peranan) VALUES ($id, $pw, $name, $sesi, $role)";
   $stmt = $conn->prepare($sql);
-  $stmt->execute();
+  if (!$stmt->execute()) {
+    throw new Exception("Gagal mendaftar pengguna: " . $stmt->error);
+  };
   /*switch ($role) {
     case 1:
       $sql = "INSERT INTO pensyarah VALUES ($id)";
