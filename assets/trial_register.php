@@ -1,10 +1,22 @@
-<?php 
+<?php
 session_start();
 $_SESSION['id'] = "P000002";
 $_SESSION['role'] = 2;
 $_SESSION['stud_year'] = 3;
 $_SESSION['acad_session'] = "2/20252026";
 $_SESSION['stud_year']= 3;
+$host = "localhost";
+$port = 3306;
+$username = "root";
+$password = "";
+$db = "sipp";
+
+try {
+  $conn = new PDO("mysql:host=$host;port=$port;dbname=$db;charset=utf8mb4", $username, $password);
+  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch(PDOException $e) {
+  die("Connection failed: " . $e->getMessage());
+}
 ?>
 <!DOCTYPE html>
 <html lang="ms">
@@ -44,7 +56,7 @@ $_SESSION['stud_year']= 3;
       padding: 2rem;
     }
     button {
-      color: #fff;
+      color: #fff;  
       padding: 0.5rem 1rem;
       font-family: serif;
       font-weight: 500;
@@ -114,6 +126,10 @@ $_SESSION['stud_year']= 3;
     #suggestion {
       min-width: 50%;
       max-width: 50%;
+    }
+    #acad-year, #acad-sem, label.acad-label {
+      width: 30%;
+      display: inline;
     } 
 
     /* --- NOTIFICATION DROPDOWN --- */
@@ -183,8 +199,7 @@ $_SESSION['stud_year']= 3;
       <div class="col-md-5 col-md-offset-1"><h3>Pendaftaran</h3></div>
     </div>
   </div>
-  <!-- <div id="user-info" class="row"> -->
-  <div class="row">
+  <div id="user-info" class="row">
     <div class="col-sm-6 form-group">
       <label for="username">ID</label>
       <input type="text" id="username" name="student" value="T000001" required="required" readonly="readonly" autofocus>
@@ -222,10 +237,16 @@ $_SESSION['stud_year']= 3;
         </optgroup>
       </select><br />
     </div>
-    <div id="comment" class="col-sm-6">
-      <label class="text-center" for="intro">Cadangan</label><br />
-      <textarea id="intro" class="form-control align-center" name="intro_comment" rows="5" cols="50" 
-      placeholder="Pengenalan" autocomplete="on"></textarea>
+    <div id="student-intro" class="col-sm-4">
+      <div class="form-group row">
+        <br /><b class="text-center">Tahun: </b>
+        <input type="number" id="acad-year" class="form-control align-center" name="year" min="1" max="5" value="1"/>
+        <br /><br /><b class="text-center">Semester: </b>
+        <input type="number" id="acad-sem" class="form-control align-center" name="semester" min="1" max="16" value="1"/>
+      </div>
+      <label class="text-center" for="cperf">TTTU4086</label>
+      <input type="number" id="cperf" class="form-control align-center" name="perf" 
+      min="0.00" max="4.00" step="0.01" value="4.00"/>
       <br /><input type="hidden" name="intro_filled" value="true" readonly="readonly"/>
     </div>
   </div><script src="https://cdn.jsdelivr.net/npm/bcryptjs@2.4.3/dist/bcrypt.min.js"></script>
