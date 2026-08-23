@@ -16,7 +16,7 @@ function generateTester() {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  if (isset($_POST['pw']) && isset($_POST['vpw']) && $_POST['pw'] === $_POST['vpw']) {
+  if (isset($_POST['vpw']) && $_POST['pw'] === $_POST['vpw'] && $_POST['intro_filled'] === 'true') {
   $conn->begin_transaction();
   try {
     // Prevent concurrent inserts using same ID by locking the table
@@ -32,6 +32,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!$stmt->execute()) {
       throw new Exception("Gagal mendaftar pengguna: " . $stmt->error);
     };
+    $conn->query("UNLOCK TABLES");
+    $conn->commit();
     /*
     switch ($role) {
       case 1:
@@ -60,6 +62,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     return "<b>$category</b><br /><br />" . $suggestion[1];
   }
   } catch (Exception $e) {
+    $conn->rollback();
+    @$conn->query("UNLOCK TABLES");
     exit($e->getMessage());
   }
   }

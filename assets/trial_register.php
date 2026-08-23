@@ -17,6 +17,8 @@ try {
 } catch(PDOException $e) {
   die("Connection failed: " . $e->getMessage());
 }
+
+include 'register_tester.php';
 ?>
 <!DOCTYPE html>
 <html lang="ms">
@@ -202,7 +204,7 @@ try {
   <div id="user-info" class="row">
     <div class="col-sm-6 form-group">
       <label for="username">ID</label>
-      <input type="text" id="username" name="student" value="T000001" required="required" readonly="readonly" autofocus>
+      <input type="text" id="username" name="student" value="<?php echo generateTester(); ?>" required="required" readonly="readonly" autofocus>
     </div>
     <div class="col-sm-6 form-group">
       <label for="name">Nama</label>
@@ -233,7 +235,7 @@ try {
           <option value="TTTS0001">Sistem Pengurusan Maklumat</option>
           <option value="LMCK0001">Kaunseling</option>
           <option value="TTTA0001">Antara Muka Pengguna</option>
-          <option value="LMCB0001">Bola Sepak</option>
+          <option value="LMBS0001">Bola Sepak</option>
         </optgroup>
       </select><br />
     </div>
