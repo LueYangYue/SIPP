@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $id = $_POST['id'];
   $password = $_POST['pwd'];
   // Validate credentials against the database
-  $stmt = $conn->prepare("SELECT * FROM sipp.pengguna WHERE id = :id AND kataLaluan = :password");
+  $stmt = $conn->prepare("SELECT * FROM pengguna WHERE id = :id AND kataLaluan = :password");
   $stmt->bindParam(':id', $id);
   $stmt->bindParam(':password', $password);
   $stmt->execute();
