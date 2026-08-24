@@ -5,7 +5,7 @@ header("Content-Type: application/json; charset=UTF-8");
 header("Access-Control-Allow-Methods: GET, POST");
 
 // Connect database from DigitalOcean, console echo $DATABASE 
-$dbURL = $DATABASE_URL; echo substr($dbURL, 0, 5);
+$dbURL = $DATABASE_URL;
 $dbopts = parse_url($dbURL);
 $host = $dbopts['host'];//Default host is  "localhost"
 $port = $dbopts['port'];

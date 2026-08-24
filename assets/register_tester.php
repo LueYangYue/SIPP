@@ -1,5 +1,5 @@
 <?php
-require_once 'db_api.php';
+require_once 'database.php';
 function generateTester() {
   try {
     $sql = "SELECT MAX(id) AS max_no FROM pengguna WHERE id LIKE 'T%'";
