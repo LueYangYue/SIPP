@@ -1,4 +1,5 @@
 <?php
+require '../api.php';
 //Open a database connection with PDO
 $host = getenv('$DATABASE_HOST');//Default host is "localhost", "dbaas-db-3754887-do-user-39786782-0.a.db.ondigitalocean.com"
 $port = getenv('$DATABASE_PORT');//25060
