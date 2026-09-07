@@ -3,7 +3,7 @@
     "description": "Application for web-based student performance intervention system",
     "require": {
         "php-64bit": "^8.2.12",
-        "monolog/monolog": "3.10.*",
+        "monolog/monolog": "3.11.*",
         "ext-pdo": "*",
         "ext-pdo_mysql": "*",
         "laravel/framework": "^13.23"
