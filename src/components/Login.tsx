@@ -1,9 +1,4 @@
-function Dashboard() {
-  return (
-    <>
-    </>
-  )
-}
+import Dashboard from './Dashboard.tsx'
 
 function LoginForm() {
   return (
@@ -24,12 +19,14 @@ function LoginForm() {
 }
 
 export default function Login() {
-  let page;
+  let role = 1;
   let isLoggedIn = false;
+  let content;
+  let page = document.getElementById('root')?.textContent;
   if (isLoggedIn) {
-    page = <Dashboard />;
+    content = <Dashboard role={role} />;
   } else {
-    page = <LoginForm />;
+    content = <LoginForm />;
   }
   return (
     <>

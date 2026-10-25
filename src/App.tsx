@@ -12,12 +12,6 @@ const admin = {
   email: 'a202211@siswa.ukm.edu.my',
 };
 
-const users = [
-  { id: 1, name: 'Student A', role: 'student' }, 
-  { id: 2, name: 'Lecturer B', role: 'lecturer' }, 
-  { id: 3, name: 'PHead C', role: 'phead' },
-];
-
 function App() {
   const [count, setCount] = useState(0)
 

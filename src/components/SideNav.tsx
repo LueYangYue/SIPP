@@ -1,4 +1,4 @@
-export default function SideBar() {
+export default function SideNav() {
     return (
         <aside className="bg-gray-800 text-white p-4 w-64 h-screen">
             <h2 className="text-lg font-bold mb-4">Navigation</h2>
