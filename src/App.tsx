@@ -1,18 +1,31 @@
 import { useState } from 'react'
+// import ReactLogo from './assets/react.svg?react'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import './App.css'
+import TopNav from './components/TopNav'
 import Header from './components/Header'
 import Footer from './components/Footer'
+
+const admin = {
+  name: 'A202211',
+  email: 'a202211@siswa.ukm.edu.my',
+};
+
+const users = [
+  { id: 1, name: 'Student A', role: 'student' }, 
+  { id: 2, name: 'Lecturer B', role: 'lecturer' }, 
+  { id: 3, name: 'PHead C', role: 'phead' },
+];
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
+    <TopNav />
     <Header />
       <section id="center">
-
         <div>
           <h1>Get started</h1>
           <p>
@@ -46,7 +59,9 @@ function App() {
             </li>
             <li>
               <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
+                {/* <ReactLogo className="logo react" aria-hidden="true" />
+                <span className="logo react" aria-hidden="true">⚛</span> */}
+                <img className="logo" src={reactLogo} alt="" />
                 Learn more
               </a>
             </li>
@@ -56,11 +71,11 @@ function App() {
           <svg className="icon" role="presentation" aria-hidden="true">
             <use href="/icons.svg#social-icon"></use>
           </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
+          <h2>Connect with admin</h2>
+          <p>Join the SIPP community</p>
           <ul>
             <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
+              <a href="https://github.com/LueYangYue/SIPP" target="_blank">
                 <svg
                   className="button-icon"
                   role="presentation"
@@ -72,39 +87,39 @@ function App() {
               </a>
             </li>
             <li>
-              <a href="https://chat.vite.dev/" target="_blank">
+              <a href={'mailto:' + admin.email} target="_blank">
                 <svg
                   className="button-icon"
                   role="presentation"
                   aria-hidden="true"
                 >
-                  <use href="/icons.svg#discord-icon"></use>
+                  <use href="/icons.svg#gmail-icon"></use>
                 </svg>
-                Discord
+                Gmail
               </a>
             </li>
             <li>
-              <a href="https://x.com/vite_js" target="_blank">
+              <a href="https://www.youtube.com/@UKMYangYue" target="_blank">
                 <svg
                   className="button-icon"
                   role="presentation"
                   aria-hidden="true"
                 >
-                  <use href="/icons.svg#x-icon"></use>
+                  <use href="/icons.svg#youtube-icon"></use>
                 </svg>
-                X.com
+                Youtube
               </a>
             </li>
             <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
+              <a href="https://www.linkedin.com/in/lue-yang-yue-4169b3325" target="_blank">
                 <svg
                   className="button-icon"
                   role="presentation"
                   aria-hidden="true"
                 >
-                  <use href="/icons.svg#bluesky-icon"></use>
+                  <use href="/icons.svg#linkedin-icon"></use>
                 </svg>
-                Bluesky
+                LinkedIn
               </a>
             </li>
           </ul>

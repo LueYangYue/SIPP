@@ -79,9 +79,9 @@ button {
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
-button:hover {
+/* button:hover {
   background-color: var(--blue-hover);
-}
+} */
 canvas {
   width: 100%;
   padding: 0.5rem;
@@ -196,6 +196,7 @@ tr:hover {
   display: flex;
   gap: 1rem;
 }
+
 /* --- NAVIGATION BAR --- */
 .navbar {
   display: flex;
