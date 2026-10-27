@@ -3,7 +3,7 @@ import Login from './Login.tsx';
 
 export default function TopNav() {
   return (
-    <div className="navbar bg-gray-800 text-white p-4">
+    <div id="topnav" className="bg-gray-800 text-white p-4">
       <a className="logo sipp" href="#">
         <img src={sippLogo} alt="SIPP Logo" width="32" height="32" />
       </a>
