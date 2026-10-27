@@ -117,8 +117,12 @@ input[type=submit]:hover {
   background-color: var(--blue-hover);
 }
 section {
-  margin: 0 auto;
-  width: 1120 px;
+  /* display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  position: relative;
+  padding: 2rem;
+  gap: 1.5rem; */
 } small {line-height: 1.5;}
 table, th, td {
   border-collapse: collapse; 
@@ -201,6 +205,7 @@ tr:hover {
   width: 100%;
   margin: 0;
   position: sticky;
+  top: 0;
   padding: 1rem 2rem;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.19);
   border-bottom: 2px var(--gray-border);
@@ -234,6 +239,13 @@ tr:hover {
   cursor: pointer;
   border-radius: 10px;
 }
+
+/* --- LANDING PAGE --- */
+section .landing {
+  margin: 0 auto;
+  width: 1120 px;
+}
+
 /* --- FOOTER --- */
 .more-footer {
   background-color: #fff;
